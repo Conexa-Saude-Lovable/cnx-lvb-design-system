@@ -28,45 +28,59 @@ const Showcase = () => {
   // Design Tokens estruturados
   const colorTokens = {
     primary: [
-      { name: "Primary", var: "--primary", value: "210 100% 50%" },
-      { name: "Primary Hover", var: "--primary-hover", value: "210 100% 45%" },
-      { name: "Primary Active", var: "--primary-active", value: "210 100% 40%" },
-      { name: "Primary Foreground", var: "--primary-foreground", value: "0 0% 100%" },
+      { name: "Primary 100", var: "--brand-primary-100", value: "252 100% 97%" },
+      { name: "Primary 200", var: "--brand-primary-200", value: "252 96% 91%" },
+      { name: "Primary 300", var: "--brand-primary-300", value: "276 75% 40%" },
+      { name: "Primary 400", var: "--brand-primary-400", value: "276 76% 29%" },
+      { name: "Primary 500", var: "--brand-primary-500", value: "276 73% 17%" },
     ],
     secondary: [
-      { name: "Secondary", var: "--secondary", value: "220 15% 95%" },
-      { name: "Secondary Hover", var: "--secondary-hover", value: "220 15% 90%" },
-      { name: "Secondary Foreground", var: "--secondary-foreground", value: "220 15% 20%" },
+      { name: "Secondary 100", var: "--brand-secondary-100", value: "350 100% 97%" },
+      { name: "Secondary 200", var: "--brand-secondary-200", value: "350 96% 91%" },
+      { name: "Secondary 300", var: "--brand-secondary-300", value: "350 91% 70%" },
+      { name: "Secondary 400", var: "--brand-secondary-400", value: "345 85% 41%" },
+      { name: "Secondary 500", var: "--brand-secondary-500", value: "345 82% 20%" },
+    ],
+    tertiary: [
+      { name: "Tertiary 100", var: "--brand-tertiary-100", value: "310 86% 97%" },
+      { name: "Tertiary 200", var: "--brand-tertiary-200", value: "310 100% 88%" },
+      { name: "Tertiary 300", var: "--brand-tertiary-300", value: "310 100% 79%" },
+      { name: "Tertiary 400", var: "--brand-tertiary-400", value: "310 55% 65%" },
+      { name: "Tertiary 500", var: "--brand-tertiary-500", value: "310 52% 38%" },
     ],
     feedback: [
-      { name: "Success", var: "--success", value: "142 76% 36%" },
-      { name: "Warning", var: "--warning", value: "38 92% 50%" },
-      { name: "Error", var: "--error", value: "0 72% 51%" },
-      { name: "Info", var: "--info", value: "199 89% 48%" },
+      { name: "Success 300", var: "--feedback-success-300", value: "146 70% 38%" },
+      { name: "Warning 300", var: "--feedback-warning-300", value: "46 86% 50%" },
+      { name: "Error 300", var: "--feedback-error-300", value: "358 76% 44%" },
+      { name: "Info 300", var: "--feedback-info-300", value: "218 81% 49%" },
     ],
     neutral: [
-      { name: "Background", var: "--background", value: "0 0% 100%" },
-      { name: "Foreground", var: "--foreground", value: "220 15% 20%" },
-      { name: "Muted", var: "--muted", value: "220 15% 96%" },
-      { name: "Border", var: "--border", value: "220 15% 88%" },
+      { name: "Neutral 100", var: "--neutral-100", value: "213 48% 94%" },
+      { name: "Neutral 200", var: "--neutral-200", value: "213 26% 59%" },
+      { name: "Neutral 300", var: "--neutral-300", value: "213 36% 35%" },
+      { name: "Neutral 400", var: "--neutral-400", value: "213 48% 20%" },
+      { name: "Neutral 500", var: "--neutral-500", value: "213 74% 9%" },
     ],
   };
 
   const spacingTokens = [
-    { name: "XS", value: "0.25rem", pixels: "4px" },
-    { name: "SM", value: "0.5rem", pixels: "8px" },
-    { name: "MD", value: "1rem", pixels: "16px" },
-    { name: "LG", value: "1.5rem", pixels: "24px" },
-    { name: "XL", value: "2rem", pixels: "32px" },
-    { name: "2XL", value: "3rem", pixels: "48px" },
+    { name: "XXS", value: "0.5rem", pixels: "8px" },
+    { name: "XS", value: "1rem", pixels: "16px" },
+    { name: "SM", value: "1.5rem", pixels: "24px" },
+    { name: "MD", value: "2rem", pixels: "32px" },
+    { name: "LG", value: "3rem", pixels: "48px" },
+    { name: "XL", value: "4rem", pixels: "64px" },
+    { name: "2XL", value: "5rem", pixels: "80px" },
   ];
 
   const radiusTokens = [
-    { name: "SM", var: "--radius-sm", value: "0.25rem" },
-    { name: "Default", var: "--radius", value: "0.5rem" },
-    { name: "MD", var: "--radius-md", value: "0.75rem" },
-    { name: "LG", var: "--radius-lg", value: "1rem" },
-    { name: "XL", var: "--radius-xl", value: "1.5rem" },
+    { name: "None", var: "--radius-none", value: "0px" },
+    { name: "XXS", var: "--radius-xxs", value: "1px" },
+    { name: "XS", var: "--radius-xs", value: "4px" },
+    { name: "MD", var: "--radius-md", value: "6px" },
+    { name: "LG", var: "--radius-lg", value: "8px" },
+    { name: "XL", var: "--radius-xl", value: "16px" },
+    { name: "Full", var: "--radius-full", value: "99999px" },
   ];
 
   return (

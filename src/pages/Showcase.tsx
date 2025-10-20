@@ -83,6 +83,14 @@ const Showcase = () => {
     { name: "Full", var: "--radius-full", value: "99999px" },
   ];
 
+  const breakpointTokens = [
+    { name: "sm", value: "640px", description: "Mobile landscape / Small tablets" },
+    { name: "md", value: "768px", description: "Tablets" },
+    { name: "lg", value: "1024px", description: "Desktop / Laptop" },
+    { name: "xl", value: "1280px", description: "Large desktop" },
+    { name: "2xl", value: "1536px", description: "Extra large screens" },
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
@@ -313,6 +321,47 @@ const Showcase = () => {
                           </code>
                         </button>
                       ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Breakpoints */}
+                <Card>
+                  <CardHeader>
+                    <CardTitle>Breakpoints Responsivos</CardTitle>
+                    <CardDescription>
+                      Larguras personalizáveis que determinam como o layout se comporta em diferentes viewports
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-3">
+                      {breakpointTokens.map((token) => (
+                        <button
+                          key={token.name}
+                          onClick={() => copyToken(token.name, token.value)}
+                          className="w-full group flex items-center gap-4 p-4 rounded-lg border bg-card hover:bg-accent transition-colors text-left"
+                        >
+                          <div className="flex-1">
+                            <div className="flex items-center gap-2 mb-1">
+                              <code className="font-bold text-primary">{token.name}</code>
+                              <span className="text-sm text-muted-foreground">•</span>
+                              <code className="text-sm font-medium">{token.value}</code>
+                            </div>
+                            <p className="text-sm text-muted-foreground">{token.description}</p>
+                          </div>
+                          {copiedToken === token.name ? (
+                            <Check className="h-4 w-4 text-success" />
+                          ) : (
+                            <Copy className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+                          )}
+                        </button>
+                      ))}
+                    </div>
+                    <div className="mt-6 p-4 rounded-lg bg-muted">
+                      <p className="text-sm font-medium mb-2">Exemplo de uso:</p>
+                      <code className="text-xs text-muted-foreground block">
+                        className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4"
+                      </code>
                     </div>
                   </CardContent>
                 </Card>

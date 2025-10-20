@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, Palette, Code2, Sparkles, BookOpen, Package } from "lucide-react";
+import { ArrowRight, Palette, Code2, Sparkles, BookOpen, Package, Boxes } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const Index = () => {
@@ -47,7 +47,7 @@ const Index = () => {
 
         {/* Features Grid */}
         <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-16">
-          <Card className="transition-all hover:shadow-lg">
+          <Card className="transition-all hover:shadow-lg cursor-pointer" onClick={() => navigate("/showcase")}>
             <CardHeader>
               <Palette className="h-10 w-10 text-primary mb-4" />
               <CardTitle>Tokens Unificados</CardTitle>
@@ -57,22 +57,22 @@ const Index = () => {
             </CardHeader>
           </Card>
 
-          <Card className="transition-all hover:shadow-lg">
+          <Card className="transition-all hover:shadow-lg cursor-pointer" onClick={() => navigate("/icons")}>
             <CardHeader>
-              <Package className="h-10 w-10 text-primary mb-4" />
-              <CardTitle>Componentes Prontos</CardTitle>
+              <Boxes className="h-10 w-10 text-primary mb-4" />
+              <CardTitle>Iconografia Customizada</CardTitle>
               <CardDescription>
-                Biblioteca crescente de componentes React + Tailwind testados
+                164 ícones, 5 emojis e 93 ilustrações SVG prontas para uso
               </CardDescription>
             </CardHeader>
           </Card>
 
-          <Card className="transition-all hover:shadow-lg">
+          <Card className="transition-all hover:shadow-lg opacity-60">
             <CardHeader>
-              <Code2 className="h-10 w-10 text-primary mb-4" />
-              <CardTitle>Fácil Integração</CardTitle>
+              <Package className="h-10 w-10 text-primary mb-4" />
+              <CardTitle>Componentes (Em breve)</CardTitle>
               <CardDescription>
-                Remix do projeto ou instale via NPM package (em breve)
+                Biblioteca de componentes React + Tailwind testados
               </CardDescription>
             </CardHeader>
           </Card>

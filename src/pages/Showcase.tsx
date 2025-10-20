@@ -93,27 +93,6 @@ const Showcase = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="border-b bg-card sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-card/95">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="h-10 w-10 rounded-lg bg-primary flex items-center justify-center">
-                <Sparkles className="h-6 w-6 text-primary-foreground" />
-              </div>
-              <div>
-                <h1 className="text-2xl font-bold">Conexa Hero DS</h1>
-                <p className="text-sm text-muted-foreground">Lovable Edition</p>
-              </div>
-            </div>
-            <Badge variant="secondary" className="gap-2">
-              <Code2 className="h-3 w-3" />
-              v1.0.0
-            </Badge>
-          </div>
-        </div>
-      </header>
-
       {/* Main Content */}
       <main className="container mx-auto px-4 py-8">
         <Tabs defaultValue="tokens" className="space-y-8">

@@ -18,6 +18,10 @@ const Icons = () => {
 
   const emojisList = [
     { name: "AngryFace", component: ConexaIcons.AngryFace, category: "emojis" },
+    { name: "DelightedFace", component: ConexaIcons.DelightedFace, category: "emojis" },
+    { name: "HappyFace", component: ConexaIcons.HappyFace, category: "emojis" },
+    { name: "RegularFace", component: ConexaIcons.RegularFace, category: "emojis" },
+    { name: "SadFace", component: ConexaIcons.SadFace, category: "emojis" },
   ];
 
   const illustrationsList = [
@@ -39,34 +43,12 @@ const Icons = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="border-b bg-card sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-card/95">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="h-10 w-10 rounded-lg bg-primary flex items-center justify-center">
-                <Sparkles className="h-6 w-6 text-primary-foreground" />
-              </div>
-              <div>
-                <h1 className="text-2xl font-bold">Conexa Iconography</h1>
-                <p className="text-sm text-muted-foreground">Biblioteca de ícones customizados</p>
-              </div>
-            </div>
-            <div className="flex items-center gap-2">
-              <Badge variant="secondary">Icons: 2</Badge>
-              <Badge variant="secondary">Emojis: 1</Badge>
-              <Badge variant="secondary">Illustrations: 2</Badge>
-            </div>
-          </div>
-        </div>
-      </header>
-
       {/* Main Content */}
       <main className="container mx-auto px-4 py-8">
         <Tabs defaultValue="icons" className="space-y-8">
           <TabsList className="grid w-full max-w-md grid-cols-3">
             <TabsTrigger value="icons">Icons (2)</TabsTrigger>
-            <TabsTrigger value="emojis">Emojis (1)</TabsTrigger>
+            <TabsTrigger value="emojis">Emojis (5)</TabsTrigger>
             <TabsTrigger value="illustrations">Illustrations (2)</TabsTrigger>
           </TabsList>
 

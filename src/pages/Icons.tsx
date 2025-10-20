@@ -16,6 +16,15 @@ const Icons = () => {
     { name: "Adjustments", component: ConexaIcons.Adjustments, category: "icons" },
   ];
 
+  const emojisList = [
+    { name: "AngryFace", component: ConexaIcons.AngryFace, category: "emojis" },
+  ];
+
+  const illustrationsList = [
+    { name: "CardBack", component: ConexaIcons.CardBack, category: "illustrations", width: 520, height: 240 },
+    { name: "WomanPhoneNotification", component: ConexaIcons.WomanPhoneNotification, category: "illustrations", width: 102, height: 150 },
+  ];
+
   const copyUsage = (iconName: string) => {
     const usage = `import { ${iconName} } from "@/components/icons";\n\n<${iconName} size={24} color="currentColor" />`;
     navigator.clipboard.writeText(usage);
@@ -45,8 +54,8 @@ const Icons = () => {
             </div>
             <div className="flex items-center gap-2">
               <Badge variant="secondary">Icons: 2</Badge>
-              <Badge variant="secondary">Emojis: 0</Badge>
-              <Badge variant="secondary">Illustrations: 0</Badge>
+              <Badge variant="secondary">Emojis: 1</Badge>
+              <Badge variant="secondary">Illustrations: 2</Badge>
             </div>
           </div>
         </div>
@@ -57,8 +66,8 @@ const Icons = () => {
         <Tabs defaultValue="icons" className="space-y-8">
           <TabsList className="grid w-full max-w-md grid-cols-3">
             <TabsTrigger value="icons">Icons (2)</TabsTrigger>
-            <TabsTrigger value="emojis">Emojis (0)</TabsTrigger>
-            <TabsTrigger value="illustrations">Illustrations (0)</TabsTrigger>
+            <TabsTrigger value="emojis">Emojis (1)</TabsTrigger>
+            <TabsTrigger value="illustrations">Illustrations (2)</TabsTrigger>
           </TabsList>
 
           <TabsContent value="icons" className="space-y-6">
@@ -162,18 +171,126 @@ const Icons = () => {
             </Card>
           </TabsContent>
 
-          <TabsContent value="emojis">
+          <TabsContent value="emojis" className="space-y-6">
             <Card>
-              <CardContent className="py-12 text-center">
-                <p className="text-muted-foreground">Emojis serão adicionados em breve...</p>
+              <CardHeader>
+                <CardTitle>
+                  Emojis Conexa
+                  <span className="text-muted-foreground ml-2">
+                    ({emojisList.length} {emojisList.length === 1 ? "emoji" : "emojis"})
+                  </span>
+                </CardTitle>
+                <CardDescription>
+                  Emojis customizados com cores fixas. Use apenas a prop size.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                  {emojisList.map((emoji) => {
+                    const EmojiComponent = emoji.component as any;
+                    return (
+                      <button
+                        key={emoji.name}
+                        onClick={() => copyUsage(emoji.name)}
+                        className="group relative p-6 rounded-lg border bg-card hover:bg-accent transition-all hover:shadow-md flex flex-col items-center justify-center gap-3"
+                      >
+                        <EmojiComponent size={48} />
+                        <div className="text-center">
+                          <p className="text-sm font-medium">{emoji.name}</p>
+                        </div>
+                        <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                          {copiedIcon === emoji.name ? (
+                            <Check className="h-4 w-4 text-success" />
+                          ) : (
+                            <Copy className="h-4 w-4 text-muted-foreground" />
+                          )}
+                        </div>
+                      </button>
+                    );
+                  })}
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>Como usar Emojis</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div>
+                  <code className="block p-3 bg-muted rounded-md text-sm">
+                    {`import { AngryFace } from "@/components/icons";\n\n<AngryFace size={30} />`}
+                  </code>
+                </div>
+                <p className="text-sm text-muted-foreground">
+                  ⚠️ Emojis possuem cores fixas e não aceitam a prop <code>color</code>
+                </p>
               </CardContent>
             </Card>
           </TabsContent>
 
-          <TabsContent value="illustrations">
+          <TabsContent value="illustrations" className="space-y-6">
             <Card>
-              <CardContent className="py-12 text-center">
-                <p className="text-muted-foreground">Ilustrações serão adicionadas em breve...</p>
+              <CardHeader>
+                <CardTitle>
+                  Ilustrações Conexa
+                  <span className="text-muted-foreground ml-2">
+                    ({illustrationsList.length} {illustrationsList.length === 1 ? "ilustração" : "ilustrações"})
+                  </span>
+                </CardTitle>
+                <CardDescription>
+                  Ilustrações complexas com dimensões e cores fixas
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {illustrationsList.map((illustration) => {
+                    const IllustrationComponent = illustration.component as any;
+                    return (
+                      <button
+                        key={illustration.name}
+                        onClick={() => copyUsage(illustration.name)}
+                        className="group relative p-6 rounded-lg border bg-card hover:bg-accent transition-all hover:shadow-md flex flex-col items-center justify-center gap-4"
+                      >
+                        <div className="w-full flex items-center justify-center overflow-hidden">
+                          <IllustrationComponent 
+                            width={illustration.width ? illustration.width / 2 : undefined}
+                            height={illustration.height ? illustration.height / 2 : undefined}
+                          />
+                        </div>
+                        <div className="text-center">
+                          <p className="text-sm font-medium">{illustration.name}</p>
+                          <p className="text-xs text-muted-foreground">
+                            {illustration.width}x{illustration.height}px
+                          </p>
+                        </div>
+                        <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                          {copiedIcon === illustration.name ? (
+                            <Check className="h-4 w-4 text-success" />
+                          ) : (
+                            <Copy className="h-4 w-4 text-muted-foreground" />
+                          )}
+                        </div>
+                      </button>
+                    );
+                  })}
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>Como usar Ilustrações</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div>
+                  <code className="block p-3 bg-muted rounded-md text-sm">
+                    {`import { CardBack } from "@/components/icons";\n\n<CardBack width={520} height={240} />`}
+                  </code>
+                </div>
+                <p className="text-sm text-muted-foreground">
+                  💡 Ilustrações mantêm proporções originais e cores fixas
+                </p>
               </CardContent>
             </Card>
           </TabsContent>

@@ -1,73 +1,115 @@
-# Welcome to your Lovable project
+# Conexa Hero Design System - Lovable Edition
 
-## Project info
+Sistema de design unificado da Conexa Saúde para projetos desenvolvidos com Lovable.
 
-**URL**: https://lovable.dev/projects/44066e81-3327-4af0-a252-febae8a6ba1c
+## 🎯 Objetivo
 
-## How can I edit this code?
+Manter consistência visual entre múltiplos projetos Lovable através de:
+- **Tokens de design centralizados** (cores, espaçamentos, tipografia)
+- **Componentes reutilizáveis** convertidos do Storybook original
+- **Guidelines claras** de uso e boas práticas
 
-There are several ways of editing your application.
+## 📦 Estrutura do Projeto
 
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/44066e81-3327-4af0-a252-febae8a6ba1c) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```
+src/
+├── index.css              # Todos os design tokens (HSL)
+├── tailwind.config.ts     # Configuração Tailwind com tokens
+├── components/
+│   ├── ui/               # Componentes shadcn customizados
+│   └── conexa/           # Componentes Conexa convertidos
+└── pages/
+    ├── Index.tsx         # Home do projeto
+    └── Showcase.tsx      # Galeria visual de tokens/componentes
 ```
 
-**Edit a file directly in GitHub**
+## 🚀 Como Usar
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Opção 1: Remix (Recomendado para começar)
 
-**Use GitHub Codespaces**
+1. No Lovable: **Settings → Remix this project**
+2. Novo projeto é criado com design system completo
+3. Comece a desenvolver usando os tokens e componentes
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Opção 2: NPM Package (Em desenvolvimento)
 
-## What technologies are used for this project?
+```bash
+npm install @conexa/hero-lovable
+```
 
-This project is built with:
+## 🎨 Design Tokens
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Todos os tokens estão definidos em `src/index.css` usando HSL:
 
-## How can I deploy this project?
+### Cores Principais
+- `--primary`: Cor primária da marca
+- `--primary-hover`: Estado hover
+- `--primary-active`: Estado ativo
+- `--primary-foreground`: Texto sobre primária
 
-Simply open [Lovable](https://lovable.dev/projects/44066e81-3327-4af0-a252-febae8a6ba1c) and click on Share -> Publish.
+### Cores de Feedback
+- `--success`: Ações de sucesso
+- `--warning`: Alertas
+- `--error`: Erros
+- `--info`: Informações
 
-## Can I connect a custom domain to my Lovable project?
+### Uso nos Componentes
 
-Yes, you can!
+```tsx
+// ✅ Usando tokens do design system
+<Button className="bg-primary text-primary-foreground">
+  Ação Primária
+</Button>
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+// ❌ Evitar cores diretas
+<Button className="bg-blue-500 text-white">
+  Não fazer assim
+</Button>
+```
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## 📖 Showcase
+
+Acesse `/showcase` para visualizar:
+- Todos os design tokens com valores copiáveis
+- Componentes disponíveis e suas variações
+- Guidelines de uso
+
+## 🔄 Workflow de Conversão
+
+1. Componente selecionado do Storybook original
+2. Análise de props, variantes e estados
+3. Conversão para React + Tailwind usando tokens
+4. Validação e ajustes
+5. Commit no GitHub
+
+## 🛠️ Tecnologias
+
+- **React** + **TypeScript**
+- **Tailwind CSS** com design tokens
+- **shadcn/ui** como base de componentes
+- **Vite** como bundler
+
+## 📚 Referências
+
+- [Storybook Original](https://conexa-hero.conexasaude.com.br/)
+- [Lovable Documentation](https://docs.lovable.dev/)
+
+## 🚧 Status
+
+**Em construção** - Componentes sendo convertidos gradualmente do Storybook original.
+
+### Roadmap
+- [x] Estrutura base de tokens
+- [x] Página showcase
+- [ ] Conversão de componentes principais (Button, Input, Card)
+- [ ] Conversão de componentes de formulário
+- [ ] Conversão de componentes de navegação
+- [ ] Publicação como NPM package
+
+## 📄 Licença
+
+Uso interno - Conexa Saúde
+
+---
+
+**Desenvolvido com ❤️ pela equipe Conexa**

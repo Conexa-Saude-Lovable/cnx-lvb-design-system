@@ -1,3 +1,13 @@
 export { CardBack } from "./CardBack";
+export { CardFront } from "./CardFront";
+export { Doctors } from "./Doctors";
+export { HealthClipboard } from "./HealthClipboard";
+export { HealthSearch } from "./HealthSearch";
+export { HealthTeam } from "./HealthTeam";
+export { ManAdvocate } from "./ManAdvocate";
+export { ManHoldingPhone } from "./ManHoldingPhone";
+export { ManMoney } from "./ManMoney";
+export { ManRun } from "./ManRun";
+export { ManTalking } from "./ManTalking";
 export { WomanPhoneNotification } from "./WomanPhoneNotification";
 export type { IllustrationProps, IllustrationComponent } from "./Illustration";

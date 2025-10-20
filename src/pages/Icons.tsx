@@ -26,6 +26,16 @@ const Icons = () => {
 
   const illustrationsList = [
     { name: "CardBack", component: ConexaIcons.CardBack, category: "illustrations", width: 520, height: 240 },
+    { name: "CardFront", component: ConexaIcons.CardFront, category: "illustrations", width: 520, height: 240 },
+    { name: "Doctors", component: ConexaIcons.Doctors, category: "illustrations", width: 399, height: 240 },
+    { name: "HealthClipboard", component: ConexaIcons.HealthClipboard, category: "illustrations", width: 241, height: 297 },
+    { name: "HealthSearch", component: ConexaIcons.HealthSearch, category: "illustrations", width: 241, height: 238 },
+    { name: "HealthTeam", component: ConexaIcons.HealthTeam, category: "illustrations", width: 769, height: 248 },
+    { name: "ManAdvocate", component: ConexaIcons.ManAdvocate, category: "illustrations", width: 241, height: 240 },
+    { name: "ManHoldingPhone", component: ConexaIcons.ManHoldingPhone, category: "illustrations", width: 218, height: 240 },
+    { name: "ManMoney", component: ConexaIcons.ManMoney, category: "illustrations", width: 241, height: 240 },
+    { name: "ManRun", component: ConexaIcons.ManRun, category: "illustrations", width: 205, height: 242 },
+    { name: "ManTalking", component: ConexaIcons.ManTalking, category: "illustrations", width: 241, height: 240 },
     { name: "WomanPhoneNotification", component: ConexaIcons.WomanPhoneNotification, category: "illustrations", width: 102, height: 150 },
   ];
 
@@ -45,11 +55,23 @@ const Icons = () => {
     <div className="min-h-screen bg-background">
       {/* Main Content */}
       <main className="container mx-auto px-4 py-8">
+        <div className="mb-8">
+          <h1 className="text-3xl font-bold mb-2">Iconografia Conexa</h1>
+          <p className="text-muted-foreground mb-4">
+            Biblioteca completa de ícones, emojis e ilustrações customizados
+          </p>
+          <div className="flex items-center gap-2">
+            <Badge variant="secondary">Icons: 2</Badge>
+            <Badge variant="secondary">Emojis: 5</Badge>
+            <Badge variant="secondary">Illustrations: 12</Badge>
+          </div>
+        </div>
+        
         <Tabs defaultValue="icons" className="space-y-8">
           <TabsList className="grid w-full max-w-md grid-cols-3">
             <TabsTrigger value="icons">Icons (2)</TabsTrigger>
             <TabsTrigger value="emojis">Emojis (5)</TabsTrigger>
-            <TabsTrigger value="illustrations">Illustrations (2)</TabsTrigger>
+            <TabsTrigger value="illustrations">Illustrations (12)</TabsTrigger>
           </TabsList>
 
           <TabsContent value="icons" className="space-y-6">

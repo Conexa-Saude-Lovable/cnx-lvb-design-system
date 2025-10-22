@@ -14,6 +14,8 @@ const Icons = () => {
   const iconsList = [
     { name: "Bulb", component: ConexaIcons.Bulb, category: "icons" },
     { name: "Adjustments", component: ConexaIcons.Adjustments, category: "icons" },
+    { name: "CalendarRepeat", component: ConexaIcons.CalendarRepeat, category: "icons" },
+    { name: "DoubleCheck", component: ConexaIcons.DoubleCheck, category: "icons" },
   ];
 
   const emojisList = [
@@ -81,7 +83,7 @@ const Icons = () => {
             Biblioteca completa de ícones, emojis e ilustrações customizados
           </p>
           <div className="flex items-center gap-2">
-            <Badge variant="secondary">Icons: 2</Badge>
+            <Badge variant="secondary">Icons: 4</Badge>
             <Badge variant="secondary">Emojis: 5</Badge>
             <Badge variant="secondary">Illustrations: 32</Badge>
           </div>
@@ -89,7 +91,7 @@ const Icons = () => {
         
         <Tabs defaultValue="icons" className="space-y-8">
           <TabsList className="grid w-full max-w-md grid-cols-3">
-            <TabsTrigger value="icons">Icons (2)</TabsTrigger>
+            <TabsTrigger value="icons">Icons (4)</TabsTrigger>
             <TabsTrigger value="emojis">Emojis (5)</TabsTrigger>
             <TabsTrigger value="illustrations">Illustrations (32)</TabsTrigger>
           </TabsList>

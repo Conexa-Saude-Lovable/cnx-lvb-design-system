@@ -46,6 +46,16 @@ const Icons = () => {
     { name: "MedicClock", component: ConexaIcons.MedicClock, category: "illustrations", width: 212, height: 240 },
     { name: "MedicCrossedArmsPrimary", component: ConexaIcons.MedicCrossedArmsPrimary, category: "illustrations", width: 201, height: 241 },
     { name: "MedicCrossedArmsSecondary", component: ConexaIcons.MedicCrossedArmsSecondary, category: "illustrations", width: 209, height: 240 },
+    { name: "MedicError", component: ConexaIcons.MedicError, category: "illustrations", width: 241, height: 240 },
+    { name: "MedicExplaining", component: ConexaIcons.MedicExplaining, category: "illustrations", width: 211, height: 240 },
+    { name: "MedicHappyPrimary", component: ConexaIcons.MedicHappyPrimary, category: "illustrations", width: 201, height: 240 },
+    { name: "MedicHappySecondary", component: ConexaIcons.MedicHappySecondary, category: "illustrations", width: 208, height: 240 },
+    { name: "MedicHelloPaperPrimary", component: ConexaIcons.MedicHelloPaperPrimary, category: "illustrations", width: 201, height: 240 },
+    { name: "MedicHelloPaperSecondary", component: ConexaIcons.MedicHelloPaperSecondary, category: "illustrations", width: 208, height: 240 },
+    { name: "MedicNegative", component: ConexaIcons.MedicNegative, category: "illustrations", width: 240, height: 240 },
+    { name: "MedicPrepared", component: ConexaIcons.MedicPrepared, category: "illustrations", width: 201, height: 240 },
+    { name: "MedicReady", component: ConexaIcons.MedicReady, category: "illustrations", width: 201, height: 240 },
+    { name: "MedicScreeningPrimary", component: ConexaIcons.MedicScreeningPrimary, category: "illustrations", width: 201, height: 240 },
     { name: "WomanPhoneNotification", component: ConexaIcons.WomanPhoneNotification, category: "illustrations", width: 102, height: 150 },
   ];
 
@@ -73,7 +83,7 @@ const Icons = () => {
           <div className="flex items-center gap-2">
             <Badge variant="secondary">Icons: 2</Badge>
             <Badge variant="secondary">Emojis: 5</Badge>
-            <Badge variant="secondary">Illustrations: 22</Badge>
+            <Badge variant="secondary">Illustrations: 32</Badge>
           </div>
         </div>
         
@@ -81,7 +91,7 @@ const Icons = () => {
           <TabsList className="grid w-full max-w-md grid-cols-3">
             <TabsTrigger value="icons">Icons (2)</TabsTrigger>
             <TabsTrigger value="emojis">Emojis (5)</TabsTrigger>
-            <TabsTrigger value="illustrations">Illustrations (22)</TabsTrigger>
+            <TabsTrigger value="illustrations">Illustrations (32)</TabsTrigger>
           </TabsList>
 
           <TabsContent value="icons" className="space-y-6">

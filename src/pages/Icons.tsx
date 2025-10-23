@@ -159,7 +159,7 @@ const Icons = () => {
                       <button
                         key={icon.name}
                         onClick={() => copyUsage(icon.name)}
-                        className="group relative p-6 rounded-lg border bg-card hover:bg-accent transition-all hover:shadow-md flex flex-col items-center justify-center gap-3"
+                        className="group relative p-6 rounded-lg border bg-card hover:bg-[hsl(var(--primary-hover))] transition-all hover:shadow-md flex flex-col items-center justify-center gap-3"
                       >
                         <IconComponent size={32} className="text-foreground" />
                         <div className="text-center">
@@ -238,7 +238,7 @@ const Icons = () => {
                       <button
                         key={emoji.name}
                         onClick={() => copyUsage(emoji.name)}
-                        className="group relative p-6 rounded-lg border bg-card hover:bg-accent transition-all hover:shadow-md flex flex-col items-center justify-center gap-3"
+                        className="group relative p-6 rounded-lg border bg-card hover:bg-[hsl(var(--primary-hover))] transition-all hover:shadow-md flex flex-col items-center justify-center gap-3"
                       >
                         <EmojiComponent size={48} />
                         <div className="text-center">
@@ -296,7 +296,7 @@ const Icons = () => {
                       <button
                         key={illustration.name}
                         onClick={() => copyUsage(illustration.name)}
-                        className="group relative p-6 rounded-lg border bg-card hover:bg-accent transition-all hover:shadow-md flex flex-col items-center justify-center gap-4"
+                        className="group relative p-6 rounded-lg border bg-card hover:bg-[hsl(var(--primary-hover))] transition-all hover:shadow-md flex flex-col items-center justify-center gap-4"
                       >
                         <div className="w-full flex items-center justify-center overflow-hidden">
                           <IllustrationComponent 

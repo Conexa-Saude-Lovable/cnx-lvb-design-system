@@ -15,7 +15,17 @@ const Icons = () => {
     { name: "Bulb", component: ConexaIcons.Bulb, category: "icons" },
     { name: "Adjustments", component: ConexaIcons.Adjustments, category: "icons" },
     { name: "CalendarRepeat", component: ConexaIcons.CalendarRepeat, category: "icons" },
+    { name: "CalendarRepeatTwo", component: ConexaIcons.CalendarRepeatTwo, category: "icons" },
     { name: "DoubleCheck", component: ConexaIcons.DoubleCheck, category: "icons" },
+    { name: "DoubleCheckTwo", component: ConexaIcons.DoubleCheckTwo, category: "icons" },
+    { name: "DragDrop", component: ConexaIcons.DragDrop, category: "icons" },
+    { name: "IAFill", component: ConexaIcons.IAFill, category: "icons" },
+    { name: "IALine", component: ConexaIcons.IALine, category: "icons" },
+    { name: "MinimizeScreen", component: ConexaIcons.MinimizeScreen, category: "icons" },
+    { name: "Pause", component: ConexaIcons.Pause, category: "icons" },
+    { name: "Ring", component: ConexaIcons.Ring, category: "icons" },
+    { name: "SearchHeart", component: ConexaIcons.SearchHeart, category: "icons" },
+    { name: "Talk", component: ConexaIcons.Talk, category: "icons" },
   ];
 
   const emojisList = [
@@ -83,7 +93,7 @@ const Icons = () => {
             Biblioteca completa de ícones, emojis e ilustrações customizados
           </p>
           <div className="flex items-center gap-2">
-            <Badge variant="secondary">Icons: 4</Badge>
+            <Badge variant="secondary">Icons: 14</Badge>
             <Badge variant="secondary">Emojis: 5</Badge>
             <Badge variant="secondary">Illustrations: 32</Badge>
           </div>
@@ -91,7 +101,7 @@ const Icons = () => {
         
         <Tabs defaultValue="icons" className="space-y-8">
           <TabsList className="grid w-full max-w-md grid-cols-3">
-            <TabsTrigger value="icons">Icons (4)</TabsTrigger>
+            <TabsTrigger value="icons">Icons (14)</TabsTrigger>
             <TabsTrigger value="emojis">Emojis (5)</TabsTrigger>
             <TabsTrigger value="illustrations">Illustrations (32)</TabsTrigger>
           </TabsList>

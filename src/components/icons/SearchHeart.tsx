@@ -1,0 +1,41 @@
+import { createIcon } from "./Icon";
+
+export const SearchHeart = createIcon(
+  "SearchHeart",
+  "0 0 24 24",
+  (color: string) => (
+    <>
+      <path
+        stroke={color}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
+        d="m19.33 3.017.17.173.175-.186a1.595 1.595 0 0 1 2.305-.023l.036.036a1.71 1.71 0 0 1 0 2.383l-1.754 1.78a1.07 1.07 0 0 1-1.524 0L16.984 5.4a1.71 1.71 0 0 1 0-2.383v0a1.646 1.646 0 0 1 2.346 0"
+        clipRule="evenodd"
+      />
+      <path
+        stroke={color}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
+        d="M13.895 3.213A9.02 9.02 0 1 0 20.769 10"
+      />
+      <circle
+        cx="11.5"
+        cy="11.5"
+        r="3.5"
+        stroke={color}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
+      />
+      <path
+        stroke={color}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
+        d="m16 16-2.025-2.025"
+      />
+    </>
+  )
+);

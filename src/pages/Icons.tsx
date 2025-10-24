@@ -36,6 +36,16 @@ const Icons = () => {
     { name: "CalendarTwo", component: ConexaIcons.CalendarTwo, category: "icons" },
     { name: "CalendarRepeat", component: ConexaIcons.CalendarRepeat, category: "icons" },
     { name: "CalendarRepeatTwo", component: ConexaIcons.CalendarRepeatTwo, category: "icons" },
+    { name: "Camera", component: ConexaIcons.Camera, category: "icons" },
+    { name: "CameraOff", component: ConexaIcons.CameraOff, category: "icons" },
+    { name: "CameraOn", component: ConexaIcons.CameraOn, category: "icons" },
+    { name: "CardEdit", component: ConexaIcons.CardEdit, category: "icons" },
+    { name: "Chart", component: ConexaIcons.Chart, category: "icons" },
+    { name: "Chat", component: ConexaIcons.Chat, category: "icons" },
+    { name: "Check", component: ConexaIcons.Check, category: "icons" },
+    { name: "Clip", component: ConexaIcons.Clip, category: "icons" },
+    { name: "Clipboard", component: ConexaIcons.Clipboard, category: "icons" },
+    { name: "ClipboardSaved", component: ConexaIcons.ClipboardSaved, category: "icons" },
     { name: "DoubleCheck", component: ConexaIcons.DoubleCheck, category: "icons" },
     { name: "DoubleCheckTwo", component: ConexaIcons.DoubleCheckTwo, category: "icons" },
     { name: "DragDrop", component: ConexaIcons.DragDrop, category: "icons" },
@@ -113,7 +123,7 @@ const Icons = () => {
             Biblioteca completa de ícones, emojis e ilustrações customizados
           </p>
           <div className="flex items-center gap-2">
-            <Badge variant="secondary">Icons: 34</Badge>
+            <Badge variant="secondary">Icons: 44</Badge>
             <Badge variant="secondary">Emojis: 5</Badge>
             <Badge variant="secondary">Illustrations: 32</Badge>
           </div>
@@ -121,7 +131,7 @@ const Icons = () => {
         
         <Tabs defaultValue="icons" className="space-y-8">
           <TabsList className="grid w-full max-w-md grid-cols-3">
-            <TabsTrigger value="icons">Icons (34)</TabsTrigger>
+            <TabsTrigger value="icons">Icons (44)</TabsTrigger>
             <TabsTrigger value="emojis">Emojis (5)</TabsTrigger>
             <TabsTrigger value="illustrations">Illustrations (32)</TabsTrigger>
           </TabsList>

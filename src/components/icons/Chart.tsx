@@ -1,0 +1,15 @@
+import { IconComponent } from "./Icon";
+
+export const Chart: IconComponent = ({ size = 24, color = "currentColor", className = "" }) => (
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    width={size} 
+    height={size} 
+    fill="none" 
+    viewBox="0 0 24 24"
+    className={className}
+  >
+    <path fill={color} fillRule="evenodd" d="M4.194 15.334a.194.194 0 0 0-.194.194v3.778c0 .107.087.194.194.194h4.723a.75.75 0 0 1 0 1.5H4.194c-.937 0-1.694-.76-1.694-1.694v-3.778c0-.937.76-1.694 1.694-1.694h4.722a.75.75 0 0 1 0 1.5zm9.639-11.14c0-.935.759-1.694 1.694-1.694h3.778c.935 0 1.694.757 1.694 1.694v15.112c0 .935-.757 1.694-1.694 1.694h-4.722a.75.75 0 0 1-.75-.75zm1.5 0V19.5h3.972a.194.194 0 0 0 .194-.194V4.194A.194.194 0 0 0 19.305 4h-3.778a.194.194 0 0 0-.194.194"/>
+    <path fill={color} fillRule="evenodd" d="M9.86 9.667a.194.194 0 0 0-.194.194V19.5h4.917a.75.75 0 0 1 0 1.5H8.917a.75.75 0 0 1-.751-.75V9.861c0-.937.76-1.694 1.694-1.694h4.722a.75.75 0 0 1 0 1.5z"/>
+  </svg>
+);

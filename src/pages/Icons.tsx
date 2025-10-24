@@ -14,16 +14,26 @@ const Icons = () => {
   const iconsList = [
     { name: "Adjustments", component: ConexaIcons.Adjustments, category: "icons" },
     { name: "Alarm", component: ConexaIcons.Alarm, category: "icons" },
+    { name: "AlarmTwo", component: ConexaIcons.AlarmTwo, category: "icons" },
     { name: "Analytics", component: ConexaIcons.Analytics, category: "icons" },
+    { name: "AnalyticsTwo", component: ConexaIcons.AnalyticsTwo, category: "icons" },
     { name: "ArrowDown", component: ConexaIcons.ArrowDown, category: "icons" },
+    { name: "ArrowDownTwo", component: ConexaIcons.ArrowDownTwo, category: "icons" },
     { name: "ArrowLeft", component: ConexaIcons.ArrowLeft, category: "icons" },
+    { name: "ArrowLeftTwo", component: ConexaIcons.ArrowLeftTwo, category: "icons" },
     { name: "ArrowRight", component: ConexaIcons.ArrowRight, category: "icons" },
+    { name: "ArrowRightTwo", component: ConexaIcons.ArrowRightTwo, category: "icons" },
     { name: "ArrowUp", component: ConexaIcons.ArrowUp, category: "icons" },
+    { name: "ArrowUpTwo", component: ConexaIcons.ArrowUpTwo, category: "icons" },
     { name: "Back", component: ConexaIcons.Back, category: "icons" },
+    { name: "BackTwo", component: ConexaIcons.BackTwo, category: "icons" },
     { name: "Brain", component: ConexaIcons.Brain, category: "icons" },
+    { name: "BrainTwo", component: ConexaIcons.BrainTwo, category: "icons" },
     { name: "Bulb", component: ConexaIcons.Bulb, category: "icons" },
     { name: "Bullet", component: ConexaIcons.Bullet, category: "icons" },
+    { name: "BulletTwo", component: ConexaIcons.BulletTwo, category: "icons" },
     { name: "Calendar", component: ConexaIcons.Calendar, category: "icons" },
+    { name: "CalendarTwo", component: ConexaIcons.CalendarTwo, category: "icons" },
     { name: "CalendarRepeat", component: ConexaIcons.CalendarRepeat, category: "icons" },
     { name: "CalendarRepeatTwo", component: ConexaIcons.CalendarRepeatTwo, category: "icons" },
     { name: "DoubleCheck", component: ConexaIcons.DoubleCheck, category: "icons" },
@@ -103,7 +113,7 @@ const Icons = () => {
             Biblioteca completa de ícones, emojis e ilustrações customizados
           </p>
           <div className="flex items-center gap-2">
-            <Badge variant="secondary">Icons: 24</Badge>
+            <Badge variant="secondary">Icons: 34</Badge>
             <Badge variant="secondary">Emojis: 5</Badge>
             <Badge variant="secondary">Illustrations: 32</Badge>
           </div>
@@ -111,7 +121,7 @@ const Icons = () => {
         
         <Tabs defaultValue="icons" className="space-y-8">
           <TabsList className="grid w-full max-w-md grid-cols-3">
-            <TabsTrigger value="icons">Icons (24)</TabsTrigger>
+            <TabsTrigger value="icons">Icons (34)</TabsTrigger>
             <TabsTrigger value="emojis">Emojis (5)</TabsTrigger>
             <TabsTrigger value="illustrations">Illustrations (32)</TabsTrigger>
           </TabsList>

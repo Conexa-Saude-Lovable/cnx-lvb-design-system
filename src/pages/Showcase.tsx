@@ -29,68 +29,68 @@ const Showcase = () => {
   // Design Tokens estruturados
   const colorTokens = {
     primary: [
-      { name: "Primary 100", var: "--brand-primary-100", value: "250 100% 98%" },
-      { name: "Primary 200", var: "--brand-primary-200", value: "252 95% 92%" },
-      { name: "Primary 300", var: "--brand-primary-300", value: "266 77% 41%" },
-      { name: "Primary 400", var: "--brand-primary-400", value: "266 75% 30%" },
-      { name: "Primary 500", var: "--brand-primary-500", value: "263 74% 17%" },
+      { name: "Primary 100", var: "--brand-primary-100", value: "250 100% 98%", hex: "#F5F3FF" },
+      { name: "Primary 200", var: "--brand-primary-200", value: "252 95% 92%", hex: "#DED6FE" },
+      { name: "Primary 300", var: "--brand-primary-300", value: "266 77% 41%", hex: "#5D18B7" },
+      { name: "Primary 400", var: "--brand-primary-400", value: "266 75% 30%", hex: "#441384" },
+      { name: "Primary 500", var: "--brand-primary-500", value: "263 74% 17%", hex: "#240B4B" },
     ],
     secondary: [
-      { name: "Secondary 100", var: "--brand-secondary-100", value: "350 100% 98%" },
-      { name: "Secondary 200", var: "--brand-secondary-200", value: "351 92% 90%" },
-      { name: "Secondary 300", var: "--brand-secondary-300", value: "350 90% 70%" },
-      { name: "Secondary 400", var: "--brand-secondary-400", value: "346 78% 41%" },
-      { name: "Secondary 500", var: "--brand-secondary-500", value: "342 76% 20%" },
+      { name: "Secondary 100", var: "--brand-secondary-100", value: "350 100% 98%", hex: "#FFF3F5" },
+      { name: "Secondary 200", var: "--brand-secondary-200", value: "351 92% 90%", hex: "#FDCED5" },
+      { name: "Secondary 300", var: "--brand-secondary-300", value: "350 90% 70%", hex: "#F76E85" },
+      { name: "Secondary 400", var: "--brand-secondary-400", value: "346 78% 41%", hex: "#B91742" },
+      { name: "Secondary 500", var: "--brand-secondary-500", value: "342 76% 20%", hex: "#590C23" },
     ],
     tertiary: [
-      { name: "Tertiary 100", var: "--brand-tertiary-100", value: "312 63% 97%" },
-      { name: "Tertiary 200", var: "--brand-tertiary-200", value: "310 100% 88%" },
-      { name: "Tertiary 300", var: "--brand-tertiary-300", value: "310 100% 79%" },
-      { name: "Tertiary 400", var: "--brand-tertiary-400", value: "310 64% 65%" },
-      { name: "Tertiary 500", var: "--brand-tertiary-500", value: "310 52% 38%" },
+      { name: "Tertiary 100", var: "--brand-tertiary-100", value: "312 63% 97%", hex: "#FCF2FA" },
+      { name: "Tertiary 200", var: "--brand-tertiary-200", value: "310 100% 88%", hex: "#FFC3F5" },
+      { name: "Tertiary 300", var: "--brand-tertiary-300", value: "310 100% 79%", hex: "#FF96ED" },
+      { name: "Tertiary 400", var: "--brand-tertiary-400", value: "310 64% 65%", hex: "#DF6CCC" },
+      { name: "Tertiary 500", var: "--brand-tertiary-500", value: "310 52% 38%", hex: "#932E82" },
     ],
     success: [
-      { name: "Success 100", var: "--feedback-success-100", value: "117 100% 96%" },
-      { name: "Success 200", var: "--feedback-success-200", value: "117 100% 89%" },
-      { name: "Success 300", var: "--feedback-success-300", value: "142 71% 38%" },
-      { name: "Success 400", var: "--feedback-success-400", value: "142 70% 30%" },
-      { name: "Success 500", var: "--feedback-success-500", value: "142 70% 21%" },
+      { name: "Success 100", var: "--feedback-success-100", value: "117 100% 96%", hex: "#ECFFEB" },
+      { name: "Success 200", var: "--feedback-success-200", value: "117 100% 89%", hex: "#CBFFC8" },
+      { name: "Success 300", var: "--feedback-success-300", value: "142 71% 38%", hex: "#1CA44E" },
+      { name: "Success 400", var: "--feedback-success-400", value: "142 70% 30%", hex: "#17833F" },
+      { name: "Success 500", var: "--feedback-success-500", value: "142 70% 21%", hex: "#105C2C" },
     ],
     error: [
-      { name: "Error 100", var: "--feedback-error-100", value: "357 100% 95%" },
-      { name: "Error 200", var: "--feedback-error-200", value: "358 100% 80%" },
-      { name: "Error 300", var: "--feedback-error-300", value: "358 78% 44%" },
-      { name: "Error 400", var: "--feedback-error-400", value: "358 78% 32%" },
-      { name: "Error 500", var: "--feedback-error-500", value: "358 78% 20%" },
+      { name: "Error 100", var: "--feedback-error-100", value: "357 100% 95%", hex: "#FFE8E9" },
+      { name: "Error 200", var: "--feedback-error-200", value: "358 100% 80%", hex: "#FF979A" },
+      { name: "Error 300", var: "--feedback-error-300", value: "358 78% 44%", hex: "#C8191E" },
+      { name: "Error 400", var: "--feedback-error-400", value: "358 78% 32%", hex: "#911216" },
+      { name: "Error 500", var: "--feedback-error-500", value: "358 78% 20%", hex: "#590B0D" },
     ],
     warning: [
-      { name: "Warning 100", var: "--feedback-warning-100", value: "44 100% 95%" },
-      { name: "Warning 200", var: "--feedback-warning-200", value: "45 98% 77%" },
-      { name: "Warning 300", var: "--feedback-warning-300", value: "45 87% 50%" },
-      { name: "Warning 400", var: "--feedback-warning-400", value: "45 93% 29%" },
-      { name: "Warning 500", var: "--feedback-warning-500", value: "45 93% 18%" },
+      { name: "Warning 100", var: "--feedback-warning-100", value: "44 100% 95%", hex: "#FFF9E8" },
+      { name: "Warning 200", var: "--feedback-warning-200", value: "45 98% 77%", hex: "#FEE18C" },
+      { name: "Warning 300", var: "--feedback-warning-300", value: "45 87% 50%", hex: "#EDB410" },
+      { name: "Warning 400", var: "--feedback-warning-400", value: "45 93% 29%", hex: "#8F6C05" },
+      { name: "Warning 500", var: "--feedback-warning-500", value: "45 93% 18%", hex: "#594303" },
     ],
     info: [
-      { name: "Info 100", var: "--feedback-info-100", value: "217 64% 93%" },
-      { name: "Info 200", var: "--feedback-info-200", value: "217 77% 76%" },
-      { name: "Info 300", var: "--feedback-info-300", value: "217 82% 49%" },
-      { name: "Info 400", var: "--feedback-info-400", value: "217 82% 41%" },
-      { name: "Info 500", var: "--feedback-info-500", value: "218 81% 25%" },
+      { name: "Info 100", var: "--feedback-info-100", value: "217 64% 93%", hex: "#E2EBF9" },
+      { name: "Info 200", var: "--feedback-info-200", value: "217 77% 76%", hex: "#93B7F2" },
+      { name: "Info 300", var: "--feedback-info-300", value: "217 82% 49%", hex: "#1764E3" },
+      { name: "Info 400", var: "--feedback-info-400", value: "217 82% 41%", hex: "#1353BD" },
+      { name: "Info 500", var: "--feedback-info-500", value: "218 81% 25%", hex: "#0C3272" },
     ],
     neutral: [
-      { name: "Neutral 100", var: "--neutral-100", value: "210 40% 95%" },
-      { name: "Neutral 200", var: "--neutral-200", value: "209 26% 59%" },
-      { name: "Neutral 300", var: "--neutral-300", value: "210 33% 35%" },
-      { name: "Neutral 400", var: "--neutral-400", value: "210 54% 20%" },
-      { name: "Neutral 500", var: "--neutral-500", value: "210 81% 8%" },
+      { name: "Neutral 100", var: "--neutral-100", value: "210 40% 95%", hex: "#EBF1F7" },
+      { name: "Neutral 200", var: "--neutral-200", value: "209 26% 59%", hex: "#7D98B2" },
+      { name: "Neutral 300", var: "--neutral-300", value: "210 33% 35%", hex: "#3C5A78" },
+      { name: "Neutral 400", var: "--neutral-400", value: "210 54% 20%", hex: "#17324D" },
+      { name: "Neutral 500", var: "--neutral-500", value: "210 81% 8%", hex: "#041526" },
     ],
     background: [
-      { name: "Background Gray", var: "--background-gray", value: "210 100% 99%" },
-      { name: "Background White", var: "--background-white", value: "0 0% 100%" },
+      { name: "Background Gray", var: "--background-gray", value: "210 100% 99%", hex: "#FAFCFF" },
+      { name: "Background White", var: "--background-white", value: "0 0% 100%", hex: "#FFFFFF" },
     ],
     pure: [
-      { name: "Pure White", var: "--pure-white", value: "0 0% 100%" },
-      { name: "Pure Black", var: "--pure-black", value: "0 0% 0%" },
+      { name: "Pure White", var: "--pure-white", value: "0 0% 100%", hex: "#FFFFFF" },
+      { name: "Pure Black", var: "--pure-black", value: "0 0% 0%", hex: "#000000" },
     ],
   };
 
@@ -170,7 +170,7 @@ const Showcase = () => {
                       {colorTokens.primary.map((token) => (
                         <button
                           key={token.var}
-                          onClick={() => copyToken(token.var, `hsl(var(${token.var}))`)}
+                          onClick={() => copyToken(token.hex, token.hex)}
                           className="group relative overflow-hidden rounded-lg border bg-card transition-all hover:shadow-md"
                         >
                           <div
@@ -180,14 +180,14 @@ const Showcase = () => {
                           <div className="p-3 space-y-1">
                             <div className="flex items-center justify-between">
                               <p className="font-medium text-sm">{token.name}</p>
-                              {copiedToken === token.var ? (
+                              {copiedToken === token.hex ? (
                                 <Check className="h-4 w-4 text-success" />
                               ) : (
                                 <Copy className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
                               )}
                             </div>
-                            <code className="text-xs text-muted-foreground">
-                              {token.var}
+                            <code className="text-xs text-muted-foreground block">
+                              {token.hex}
                             </code>
                           </div>
                         </button>
@@ -209,7 +209,7 @@ const Showcase = () => {
                       {colorTokens.secondary.map((token) => (
                         <button
                           key={token.var}
-                          onClick={() => copyToken(token.var, `hsl(var(${token.var}))`)}
+                          onClick={() => copyToken(token.hex, token.hex)}
                           className="group relative overflow-hidden rounded-lg border bg-card transition-all hover:shadow-md"
                         >
                           <div
@@ -219,14 +219,14 @@ const Showcase = () => {
                           <div className="p-3 space-y-1">
                             <div className="flex items-center justify-between">
                               <p className="font-medium text-sm">{token.name}</p>
-                              {copiedToken === token.var ? (
+                              {copiedToken === token.hex ? (
                                 <Check className="h-4 w-4 text-success" />
                               ) : (
                                 <Copy className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
                               )}
                             </div>
-                            <code className="text-xs text-muted-foreground">
-                              {token.var}
+                            <code className="text-xs text-muted-foreground block">
+                              {token.hex}
                             </code>
                           </div>
                         </button>
@@ -248,7 +248,7 @@ const Showcase = () => {
                       {colorTokens.success.map((token) => (
                         <button
                           key={token.var}
-                          onClick={() => copyToken(token.var, `hsl(var(${token.var}))`)}
+                          onClick={() => copyToken(token.hex, token.hex)}
                           className="group relative overflow-hidden rounded-lg border bg-card transition-all hover:shadow-md"
                         >
                           <div
@@ -258,14 +258,14 @@ const Showcase = () => {
                           <div className="p-3 space-y-1">
                             <div className="flex items-center justify-between">
                               <p className="font-medium text-sm">{token.name}</p>
-                              {copiedToken === token.var ? (
+                              {copiedToken === token.hex ? (
                                 <Check className="h-4 w-4 text-success" />
                               ) : (
                                 <Copy className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
                               )}
                             </div>
-                            <code className="text-xs text-muted-foreground">
-                              {token.var}
+                            <code className="text-xs text-muted-foreground block">
+                              {token.hex}
                             </code>
                           </div>
                         </button>
@@ -287,7 +287,7 @@ const Showcase = () => {
                       {colorTokens.error.map((token) => (
                         <button
                           key={token.var}
-                          onClick={() => copyToken(token.var, `hsl(var(${token.var}))`)}
+                          onClick={() => copyToken(token.hex, token.hex)}
                           className="group relative overflow-hidden rounded-lg border bg-card transition-all hover:shadow-md"
                         >
                           <div
@@ -297,14 +297,14 @@ const Showcase = () => {
                           <div className="p-3 space-y-1">
                             <div className="flex items-center justify-between">
                               <p className="font-medium text-sm">{token.name}</p>
-                              {copiedToken === token.var ? (
+                              {copiedToken === token.hex ? (
                                 <Check className="h-4 w-4 text-success" />
                               ) : (
                                 <Copy className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
                               )}
                             </div>
-                            <code className="text-xs text-muted-foreground">
-                              {token.var}
+                            <code className="text-xs text-muted-foreground block">
+                              {token.hex}
                             </code>
                           </div>
                         </button>
@@ -326,7 +326,7 @@ const Showcase = () => {
                       {colorTokens.warning.map((token) => (
                         <button
                           key={token.var}
-                          onClick={() => copyToken(token.var, `hsl(var(${token.var}))`)}
+                          onClick={() => copyToken(token.hex, token.hex)}
                           className="group relative overflow-hidden rounded-lg border bg-card transition-all hover:shadow-md"
                         >
                           <div
@@ -336,14 +336,14 @@ const Showcase = () => {
                           <div className="p-3 space-y-1">
                             <div className="flex items-center justify-between">
                               <p className="font-medium text-sm">{token.name}</p>
-                              {copiedToken === token.var ? (
+                              {copiedToken === token.hex ? (
                                 <Check className="h-4 w-4 text-success" />
                               ) : (
                                 <Copy className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
                               )}
                             </div>
-                            <code className="text-xs text-muted-foreground">
-                              {token.var}
+                            <code className="text-xs text-muted-foreground block">
+                              {token.hex}
                             </code>
                           </div>
                         </button>
@@ -365,7 +365,7 @@ const Showcase = () => {
                       {colorTokens.info.map((token) => (
                         <button
                           key={token.var}
-                          onClick={() => copyToken(token.var, `hsl(var(${token.var}))`)}
+                          onClick={() => copyToken(token.hex, token.hex)}
                           className="group relative overflow-hidden rounded-lg border bg-card transition-all hover:shadow-md"
                         >
                           <div
@@ -375,14 +375,14 @@ const Showcase = () => {
                           <div className="p-3 space-y-1">
                             <div className="flex items-center justify-between">
                               <p className="font-medium text-sm">{token.name}</p>
-                              {copiedToken === token.var ? (
+                              {copiedToken === token.hex ? (
                                 <Check className="h-4 w-4 text-success" />
                               ) : (
                                 <Copy className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
                               )}
                             </div>
-                            <code className="text-xs text-muted-foreground">
-                              {token.var}
+                            <code className="text-xs text-muted-foreground block">
+                              {token.hex}
                             </code>
                           </div>
                         </button>
@@ -404,7 +404,7 @@ const Showcase = () => {
                       {colorTokens.neutral.map((token) => (
                         <button
                           key={token.var}
-                          onClick={() => copyToken(token.var, `hsl(var(${token.var}))`)}
+                          onClick={() => copyToken(token.hex, token.hex)}
                           className="group relative overflow-hidden rounded-lg border bg-card transition-all hover:shadow-md"
                         >
                           <div
@@ -414,14 +414,14 @@ const Showcase = () => {
                           <div className="p-3 space-y-1">
                             <div className="flex items-center justify-between">
                               <p className="font-medium text-sm">{token.name}</p>
-                              {copiedToken === token.var ? (
+                              {copiedToken === token.hex ? (
                                 <Check className="h-4 w-4 text-success" />
                               ) : (
                                 <Copy className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
                               )}
                             </div>
-                            <code className="text-xs text-muted-foreground">
-                              {token.var}
+                            <code className="text-xs text-muted-foreground block">
+                              {token.hex}
                             </code>
                           </div>
                         </button>
@@ -443,7 +443,7 @@ const Showcase = () => {
                       {colorTokens.background.map((token) => (
                         <button
                           key={token.var}
-                          onClick={() => copyToken(token.var, `hsl(var(${token.var}))`)}
+                          onClick={() => copyToken(token.hex, token.hex)}
                           className="group relative overflow-hidden rounded-lg border bg-card transition-all hover:shadow-md"
                         >
                           <div
@@ -453,14 +453,14 @@ const Showcase = () => {
                           <div className="p-3 space-y-1">
                             <div className="flex items-center justify-between">
                               <p className="font-medium text-sm">{token.name}</p>
-                              {copiedToken === token.var ? (
+                              {copiedToken === token.hex ? (
                                 <Check className="h-4 w-4 text-success" />
                               ) : (
                                 <Copy className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
                               )}
                             </div>
-                            <code className="text-xs text-muted-foreground">
-                              {token.var}
+                            <code className="text-xs text-muted-foreground block">
+                              {token.hex}
                             </code>
                           </div>
                         </button>
@@ -482,7 +482,7 @@ const Showcase = () => {
                       {colorTokens.pure.map((token) => (
                         <button
                           key={token.var}
-                          onClick={() => copyToken(token.var, `hsl(var(${token.var}))`)}
+                          onClick={() => copyToken(token.hex, token.hex)}
                           className="group relative overflow-hidden rounded-lg border bg-card transition-all hover:shadow-md"
                         >
                           <div
@@ -492,14 +492,14 @@ const Showcase = () => {
                           <div className="p-3 space-y-1">
                             <div className="flex items-center justify-between">
                               <p className="font-medium text-sm">{token.name}</p>
-                              {copiedToken === token.var ? (
+                              {copiedToken === token.hex ? (
                                 <Check className="h-4 w-4 text-success" />
                               ) : (
                                 <Copy className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
                               )}
                             </div>
-                            <code className="text-xs text-muted-foreground">
-                              {token.var}
+                            <code className="text-xs text-muted-foreground block">
+                              {token.hex}
                             </code>
                           </div>
                         </button>

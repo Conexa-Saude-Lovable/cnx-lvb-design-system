@@ -4,7 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Navigation } from "@/components/Navigation";
-import Index from "./pages/Index";
+import Welcome from "./pages/Welcome";
 import Showcase from "./pages/Showcase";
 import Icons from "./pages/Icons";
 import ButtonComponent from "./pages/components/Button";
@@ -20,7 +20,7 @@ const App = () => (
       <BrowserRouter>
         <Navigation />
         <Routes>
-          <Route path="/" element={<Index />} />
+          <Route path="/" element={<Welcome />} />
           <Route path="/showcase" element={<Showcase />} />
           <Route path="/icons" element={<Icons />} />
           <Route path="/components/button" element={<ButtonComponent />} />

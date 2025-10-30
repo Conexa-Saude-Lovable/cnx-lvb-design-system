@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import { Sparkles, Home, Palette, Boxes } from "lucide-react";
+import { Home, Palette, Boxes } from "lucide-react";
 import { cn } from "@/lib/utils";
+import ConexaLogo from "@/assets/conexa-logo.svg";
 
 export const Navigation = () => {
   const location = useLocation();
@@ -15,12 +15,14 @@ export const Navigation = () => {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center px-4">
-        <Link to="/" className="flex items-center gap-2 mr-6">
-          <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center">
-            <Sparkles className="h-5 w-5 text-primary-foreground" />
-          </div>
-          <span className="font-bold text-lg hidden sm:inline-block">
-            Conexa Lovable Hero
+        <Link to="/" className="flex items-center gap-3 mr-6">
+          <img 
+            src={ConexaLogo} 
+            alt="Conexa" 
+            className="h-8 w-auto"
+          />
+          <span className="font-semibold text-sm hidden lg:inline-block text-muted-foreground">
+            Boilerplate
           </span>
         </Link>
 
@@ -49,7 +51,7 @@ export const Navigation = () => {
 
         <div className="flex items-center gap-2">
           <span className="text-xs text-muted-foreground hidden md:inline">
-            v1.0.0
+            v2.0.0
           </span>
         </div>
       </div>

@@ -1,326 +1,348 @@
-# Conexa Hero Design System
+# Conexa Hero - Boilerplate Lovable
 
-Design system com componentes React, ícones customizados e tokens de design para projetos Conexa.
+Boilerplate completo para projetos Lovable da Conexa, com design system integrado, componentes prontos e arquitetura otimizada.
 
-> ✅ **v1.1.0** - Agora com imports corrigidos para uso como pacote externo!
+## 🚀 Como Usar
 
-## 🎨 O que inclui
+### 1. Fazer Remix do Projeto
 
-- **Componentes UI**: Todos os componentes shadcn/ui customizados
-- **Design Tokens**: Cores, espaçamentos, raios, sombras
-- **Ícones**: Biblioteca completa de ícones e ilustrações customizadas
-- **Tipografia**: Sistema tipográfico consistente
-- **Temas**: Suporte a light/dark mode
+1. Clique no nome do projeto no topo esquerdo do Lovable
+2. Selecione **Settings**
+3. Clique em **Remix this project**
+4. Seu novo projeto estará pronto com tudo configurado!
 
-## 📦 Instalação em outro projeto Lovable
+### 2. O que você ganha
 
-### 1. Obter o link do GitHub
+✅ **Design System completo**
+- Tokens de design (cores, espaçamentos, tipografia)
+- Componentes shadcn/ui customizados
+- 164 ícones + 5 emojis + 93 ilustrações
 
-Copie a URL do seu repositório GitHub. Exemplo:
+✅ **Arquitetura pronta**
+- React 18 + TypeScript
+- Vite para build otimizado
+- Tailwind CSS configurado
+- React Router com navegação
+
+✅ **Componentes prontos**
+- Button, Card, Input, Select, Dialog
+- Table, Form, Tabs, Accordion
+- Toast, Alert, Badge, Avatar
+- E muito mais (40+ componentes)
+
+✅ **Dark Mode**
+- Suporte completo a temas
+- Toggle automático
+
+## 📁 Estrutura do Projeto
+
 ```
-https://github.com/Conexa-Saude-Lovable/cnx-lvb-design-system
-```
-
-### 2. No novo projeto Lovable
-
-Peça ao Lovable para instalar o pacote:
-
-```
-"Instale o design system usando o pacote github:Conexa-Saude-Lovable/cnx-lvb-design-system"
-```
-
-Ou use o comando diretamente no chat do Lovable para adicionar a dependência.
-
-### 3. Configurar o Vite (CRUCIAL!)
-
-**MUITO IMPORTANTE**: O projeto consumidor precisa processar TypeScript do design system.
-
-No arquivo `vite.config.ts` do projeto que vai usar o design system, adicione:
-
-```typescript
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react-swc";
-import path from "path";
-
-export default defineConfig({
-  server: {
-    host: "::",
-    port: 8080,
-  },
-  plugins: [react()],
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./src"),
-    },
-  },
-  // 👇 ADICIONE ESTA CONFIGURAÇÃO
-  optimizeDeps: {
-    include: [
-      'cnx-lvb-design-system',
-    ],
-  },
-  build: {
-    commonjsOptions: {
-      include: [/cnx-lvb-design-system/, /node_modules/],
-    },
-  },
-});
+src/
+├── components/
+│   ├── ui/              # Componentes shadcn customizados
+│   ├── icons/           # 164 ícones customizados
+│   │   ├── emojis/     # 5 emojis
+│   │   └── illustrations/  # 93 ilustrações
+│   ├── feedback/        # Loader e outros
+│   └── Navigation.tsx   # Navegação principal
+├── pages/
+│   ├── Welcome.tsx      # Página inicial (customize!)
+│   ├── Showcase.tsx     # Ver componentes e tokens
+│   ├── Icons.tsx        # Ver todos os ícones
+│   └── NotFound.tsx     # 404
+├── hooks/               # Custom hooks
+├── lib/
+│   └── utils.ts         # Utilitários (cn, etc)
+├── assets/              # Imagens e SVGs
+├── index.css            # Design tokens CSS
+└── App.tsx              # Configuração de rotas
 ```
 
-### 4. Importar os estilos (IMPORTANTE!)
+## 🎨 Design System
 
-No arquivo `src/main.tsx` do novo projeto, adicione ANTES do seu index.css:
+### Tokens de Design
 
-```typescript
-// No topo do arquivo, ANTES do import do index.css local
-import "cnx-lvb-design-system/src/index.css"
-import "./index.css" // seus estilos locais depois
+Todos os tokens estão em `src/index.css` e podem ser usados via Tailwind:
+
+```tsx
+// Cores
+<div className="bg-primary text-primary-foreground">
+<div className="bg-secondary text-secondary-foreground">
+<div className="bg-success text-success-foreground">
+<div className="bg-warning text-warning-foreground">
+<div className="bg-danger text-danger-foreground">
+
+// Raios
+<div className="rounded-lg">     // 8px
+<div className="rounded-xl">     // 16px
+<div className="rounded-2xl">    // 24px
+
+// Sombras
+<div className="shadow-sm">
+<div className="shadow-md">
+<div className="shadow-lg">
 ```
 
-### 5. Usar os componentes
+### Componentes UI
 
-```typescript
-// Importar componentes do pacote - use o path completo!
-import { Button, Card, CardHeader, CardTitle, CardContent } from "cnx-lvb-design-system/src/lib";
-import { Loader } from "cnx-lvb-design-system/src/lib";
-import { Alarm, Brain, Chat } from "cnx-lvb-design-system/src/lib";
+```tsx
+import { Button } from "@/components/ui/button";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Select } from "@/components/ui/select";
+// ... e muitos outros
 
-function App() {
+function MeuComponente() {
   return (
-    <div className="container p-8">
-      <Card>
-        <CardHeader>
-          <CardTitle>Teste do Design System</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <Button mode="solid" color="primary">Meu Botão</Button>
-          <div className="flex gap-4">
-            <Alarm size={24} />
-            <Brain size={24} />
-            <Chat size={24} />
-          </div>
-          <Loader size="medium" />
-        </CardContent>
-      </Card>
+    <Card>
+      <CardHeader>
+        <CardTitle>Título</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <Button>Clique aqui</Button>
+      </CardContent>
+    </Card>
+  );
+}
+```
+
+### Ícones Customizados
+
+```tsx
+import { Alarm, Brain, Chat, Calendar } from "@/components/icons";
+import { HappyFace, SadFace } from "@/components/icons/emojis";
+import { Doctors, HealthTeam } from "@/components/icons/illustrations";
+
+function MinhaPagina() {
+  return (
+    <div>
+      <Alarm size={24} className="text-primary" />
+      <HappyFace size={32} />
+      <Doctors width={200} height={150} />
     </div>
   );
 }
 ```
 
-## 🔄 Atualizar o Design System
+## 📚 Páginas de Exemplo
 
-Quando você fizer alterações neste projeto:
+### `/` - Welcome
+Página inicial com instruções de uso do boilerplate
 
-1. **Automático no GitHub**: As mudanças vão para o GitHub automaticamente via Lovable
-2. **No projeto que usa o DS**: Peça ao Lovable:
-   ```
-   "Atualize o pacote cnx-lvb-design-system para a versão mais recente"
-   ```
-   
-   Ou rode manualmente (se tiver acesso ao terminal):
-   ```bash
-   npm update cnx-lvb-design-system
-   # ou forçar reinstalação
-   npm uninstall cnx-lvb-design-system
-   npm install github:Conexa-Saude-Lovable/cnx-lvb-design-system
-   ```
-
-## 🎯 Componentes Disponíveis
-
-### Componentes UI (shadcn)
-- Button, Card, Input, Label
-- Dialog, Sheet, Drawer
-- Select, Checkbox, Switch, Slider
-- Tabs, Accordion, Collapsible
-- Table, Form, Calendar
-- Toast, Alert, Badge
-- Sidebar, Navigation Menu
-- E todos os outros componentes shadcn/ui
-
-### Componentes Customizados
-- `Loader` - Componente de loading
-- Todos os ícones customizados
-- Ilustrações
-
-### Ícones Disponíveis
-
-```typescript
-import { 
-  Alarm, 
-  Analytics, 
-  Brain,
-  Calendar,
-  Chat,
-  // ... e muitos outros
-} from "cnx-lvb-design-system";
-
-// Emojis
-import { HappyFace, SadFace, AngryFace } from "cnx-lvb-design-system";
-
-// Ilustrações
-import { Doctors, HealthTeam, MedicHappyPrimary } from "cnx-lvb-design-system";
-```
-
-## 🎨 Design Tokens
-
-Os tokens são automaticamente aplicados quando você importa o CSS. Use as classes Tailwind:
-
-```typescript
-// Cores
-<div className="bg-primary text-primary-foreground">Primary</div>
-<div className="bg-secondary text-secondary-foreground">Secondary</div>
-<div className="bg-success text-success-foreground">Success</div>
-
-// Raios
-<div className="rounded-lg">8px radius</div>
-<div className="rounded-xl">16px radius</div>
-
-// Sombras
-<div className="shadow-md">Sombra média</div>
-<div className="shadow-lg">Sombra grande</div>
-```
-
-## 📚 Ver todos os componentes
-
-Acesse a rota `/showcase` neste projeto para ver:
-- Todos os tokens de design
-- Paleta de cores completa com valores HEX
-- Variantes de componentes
+### `/showcase` 
+Showcase completo com:
+- Paleta de cores e valores HEX
+- Todos os componentes UI
 - Exemplos de uso
+- Design tokens
 
-## 🛠️ Desenvolvimento
+### `/icons`
+Galeria com todos os ícones, emojis e ilustrações
 
-### Estrutura
-```
-src/
-├── components/
-│   ├── ui/              # Componentes shadcn
-│   ├── icons/           # Ícones customizados
-│   └── feedback/        # Componentes de feedback
-├── lib/
-│   ├── index.ts         # Exports principais
-│   └── utils.ts         # Utilitários
-├── hooks/               # React hooks
-├── index.ts             # Entry point do pacote
-└── index.css            # Design tokens
-```
+## 🛠️ Começar a Desenvolver
 
-### Adicionar novos componentes
+### 1. Limpe a Welcome Page
 
-1. Crie o componente em `src/components/`
-2. Exporte em `src/lib/index.ts`
-3. Push para GitHub (automático no Lovable)
-4. Atualize nos projetos que usam
+Edite `src/pages/Welcome.tsx` e customize para seu projeto:
+- Mude o conteúdo
+- Adicione suas seções
+- Use os componentes disponíveis
 
-## 🔧 Correções Recentes (v1.1.0)
+### 2. Crie suas páginas
 
-### ✅ Problema resolvido: Imports com alias `@/`
-
-**Problema anterior:**
-```typescript
-// ❌ Não funcionava quando instalado como pacote
-import { cn } from "@/lib/utils";
+```tsx
+// src/pages/MinhaPagina.tsx
 import { Button } from "@/components/ui/button";
-import CardFrontSvg from "@/assets/illustrations/card-front.svg";
+
+const MinhaPagina = () => {
+  return (
+    <div className="container py-8">
+      <h1 className="text-4xl font-bold mb-4">Minha Página</h1>
+      <Button>Meu Botão</Button>
+    </div>
+  );
+};
+
+export default MinhaPagina;
 ```
 
-**Solução implementada:**
-```typescript
-// ✅ Agora usa caminhos relativos
-import { cn } from "../../lib/utils";
-import { Button } from "./button";
-import CardFrontSvg from "../../../assets/illustrations/card-front.svg";
+### 3. Adicione rotas
+
+```tsx
+// src/App.tsx
+import MinhaPagina from "./pages/MinhaPagina";
+
+// Adicione na Routes:
+<Route path="/minha-pagina" element={<MinhaPagina />} />
 ```
 
-**Arquivos corrigidos:**
-- ✅ Todos os 44 componentes UI em `src/components/ui/`
-- ✅ Componente `Loader` em `src/components/feedback/`
-- ✅ Arquivo `button.tsx` com imports de `Loader` e `Icon`
-- ✅ Todos os 32 componentes de ilustração em `src/components/icons/illustrations/`
-- ✅ Arquivos com interdependências entre componentes
+### 4. Atualize a navegação
 
-**Resultado:**
-Agora o pacote funciona perfeitamente quando instalado via npm/GitHub em outros projetos, incluindo as ilustrações SVG!
-
-## 🐛 Troubleshooting
-
-### ⚡ Quick Fix para erros 504
-
-Se você está vendo erros 504 ou "Failed to load resource" no console:
-
-**1. Configure o Vite** no projeto consumidor (`vite.config.ts`):
-```typescript
-export default defineConfig({
-  // ... outras configurações existentes
-  optimizeDeps: {
-    include: ['cnx-lvb-design-system'],
-  },
-  build: {
-    commonjsOptions: {
-      include: [/cnx-lvb-design-system/, /node_modules/],
-    },
-  },
-});
+```tsx
+// src/components/Navigation.tsx
+// Adicione seus links no componente de navegação
 ```
 
-**2. Use o import correto** com `/src/lib`:
-```typescript
-import { Button } from "cnx-lvb-design-system/src/lib";
+## 🎯 Best Practices
+
+### Use os Design Tokens
+
+❌ **Não faça:**
+```tsx
+<div className="bg-blue-500 text-white">
 ```
 
-**3. Limpe o cache**: Peça ao Lovable para reiniciar o servidor de desenvolvimento.
-
----
-
-### Estilos não aparecem
-Certifique-se de importar o CSS antes dos seus estilos:
-```typescript
-import "cnx-lvb-design-system/src/index.css"
-import "./index.css"
+✅ **Faça:**
+```tsx
+<div className="bg-primary text-primary-foreground">
 ```
 
-### Componente não encontrado
-Verifique se está exportado em `src/lib/index.ts` e se você está importando do caminho correto:
-```typescript
-// ✅ Correto - use o path completo
-import { Button } from "cnx-lvb-design-system/src/lib";
+### Importe componentes corretamente
 
-// ❌ Errado - não funciona sem o /src/lib
-import { Button } from "cnx-lvb-design-system";
+```tsx
+// UI Components
+import { Button, Card } from "@/components/ui/...";
+
+// Ícones
+import { Alarm, Chat } from "@/components/icons";
+
+// Hooks
+import { useToast } from "@/hooks/use-toast";
+
+// Utils
+import { cn } from "@/lib/utils";
 ```
 
-### Erros 504 ou arquivos .js não encontrados
-Este erro acontece se o Vite não está configurado para processar o TypeScript do design system.
+### Mantenha a organização
 
-**Solução**: Adicione a configuração `optimizeDeps` no `vite.config.ts`:
-```typescript
-export default defineConfig({
-  // ... outras configurações
-  optimizeDeps: {
-    include: ['cnx-lvb-design-system'],
-  },
-  build: {
-    commonjsOptions: {
-      include: [/cnx-lvb-design-system/, /node_modules/],
-    },
-  },
-});
+- Componentes reutilizáveis em `src/components/`
+- Páginas em `src/pages/`
+- Hooks customizados em `src/hooks/`
+- Utilitários em `src/lib/`
+- Assets em `src/assets/`
+
+## 🌗 Dark Mode
+
+O tema já está configurado. Para adicionar toggle:
+
+```tsx
+import { useTheme } from "next-themes";
+import { Button } from "@/components/ui/button";
+import { Moon, Sun } from "lucide-react";
+
+function ThemeToggle() {
+  const { theme, setTheme } = useTheme();
+  
+  return (
+    <Button
+      variant="outline"
+      size="icon"
+      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+    >
+      <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+      <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+    </Button>
+  );
+}
 ```
 
-Depois, peça ao Lovable: "Limpe o cache e reinicie o servidor de desenvolvimento"
+## 📦 Componentes Disponíveis
 
-### Versão antiga após atualizar
-Peça ao Lovable para remover e reinstalar:
-```
-"Remova o pacote cnx-lvb-design-system e instale novamente da versão mais recente do GitHub"
+### Layout
+- Card, Container, Separator
+- AspectRatio, ScrollArea
+
+### Formulários
+- Input, Textarea, Label
+- Select, Checkbox, Switch, Slider
+- RadioGroup, Form
+
+### Navegação
+- Navigation Menu, Sidebar
+- Breadcrumb, Tabs
+- Pagination
+
+### Feedback
+- Toast, Alert, Badge
+- Progress, Skeleton, Loader
+- Dialog, AlertDialog
+
+### Data Display
+- Table, Avatar
+- Calendar, Chart
+- Accordion, Collapsible
+
+### Outros
+- Button, Dropdown Menu
+- Tooltip, Hover Card, Popover
+- Context Menu, Menubar
+- Sheet, Drawer
+
+## 🔧 Configuração
+
+### Tailwind
+
+O `tailwind.config.ts` já está configurado com:
+- Design tokens
+- Animações customizadas
+- Variantes de cores
+- Plugins necessários
+
+### Vite
+
+O `vite.config.ts` está otimizado com:
+- Path aliases (`@/`)
+- React SWC para builds rápidos
+- Porta 8080
+
+## 📝 Scripts
+
+```bash
+# Desenvolvimento (automático no Lovable)
+npm run dev
+
+# Build para produção
+npm run build
+
+# Preview da build
+npm run preview
 ```
 
-### Erro "Cannot find module"
-Certifique-se de que:
-1. O pacote está instalado: `npm list cnx-lvb-design-system`
-2. Você está importando diretamente do pacote: `import { Button } from "cnx-lvb-design-system"`
-3. O arquivo `src/index.ts` existe no repositório (entry point do pacote)
+## 🆘 Troubleshooting
+
+### Componente não aparece
+- Verifique se importou corretamente de `@/components/ui/...`
+- Confira se o componente existe no diretório
+
+### Estilos não aplicam
+- Os tokens CSS estão em `src/index.css`
+- Use as classes Tailwind (bg-primary, text-foreground, etc)
+- Não use cores hardcoded (bg-blue-500)
+
+### Ícone não encontrado
+- Verifique em `/icons` quais estão disponíveis
+- Importe de `@/components/icons` ou `@/components/icons/emojis`
+
+## 🚀 Deploy
+
+O Lovable permite deploy direto:
+1. Clique em **Publish** no topo direito
+2. Configure seu domínio (se necessário)
+3. Pronto!
 
 ## 📄 Licença
 
 Propriedade de Conexa Hero.
+
+---
+
+## 🎉 Próximos Passos
+
+1. ✅ Faça o Remix deste projeto
+2. ✅ Explore `/showcase` e `/icons`
+3. ✅ Customize a Welcome page
+4. ✅ Crie suas páginas
+5. ✅ Desenvolva suas features
+6. ✅ Deploy!
+
+**Dúvidas?** Consulte o showcase ou veja os exemplos nas páginas de demonstração.

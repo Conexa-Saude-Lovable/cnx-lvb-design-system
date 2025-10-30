@@ -149,7 +149,7 @@ const Showcase = () => {
               <div className="mb-6">
                 <h2 className="text-3xl font-bold mb-2">Design Tokens</h2>
                 <p className="text-muted-foreground">
-                  Todos os tokens do sistema de design. Clique para copiar.
+                  Todos os tokens do boilerplate. Clique para copiar.
                 </p>
               </div>
 

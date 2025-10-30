@@ -49,11 +49,33 @@ const Showcase = () => {
       { name: "Tertiary 400", var: "--brand-tertiary-400", value: "310 64% 65%" },
       { name: "Tertiary 500", var: "--brand-tertiary-500", value: "310 52% 38%" },
     ],
-    feedback: [
+    success: [
+      { name: "Success 100", var: "--feedback-success-100", value: "117 100% 96%" },
+      { name: "Success 200", var: "--feedback-success-200", value: "117 100% 89%" },
       { name: "Success 300", var: "--feedback-success-300", value: "142 71% 38%" },
-      { name: "Warning 300", var: "--feedback-warning-300", value: "45 87% 50%" },
+      { name: "Success 400", var: "--feedback-success-400", value: "142 70% 30%" },
+      { name: "Success 500", var: "--feedback-success-500", value: "142 70% 21%" },
+    ],
+    error: [
+      { name: "Error 100", var: "--feedback-error-100", value: "357 100% 95%" },
+      { name: "Error 200", var: "--feedback-error-200", value: "358 100% 80%" },
       { name: "Error 300", var: "--feedback-error-300", value: "358 78% 44%" },
+      { name: "Error 400", var: "--feedback-error-400", value: "358 78% 32%" },
+      { name: "Error 500", var: "--feedback-error-500", value: "358 78% 20%" },
+    ],
+    warning: [
+      { name: "Warning 100", var: "--feedback-warning-100", value: "44 100% 95%" },
+      { name: "Warning 200", var: "--feedback-warning-200", value: "45 98% 77%" },
+      { name: "Warning 300", var: "--feedback-warning-300", value: "45 87% 50%" },
+      { name: "Warning 400", var: "--feedback-warning-400", value: "45 93% 29%" },
+      { name: "Warning 500", var: "--feedback-warning-500", value: "45 93% 18%" },
+    ],
+    info: [
+      { name: "Info 100", var: "--feedback-info-100", value: "217 64% 93%" },
+      { name: "Info 200", var: "--feedback-info-200", value: "217 77% 76%" },
       { name: "Info 300", var: "--feedback-info-300", value: "217 82% 49%" },
+      { name: "Info 400", var: "--feedback-info-400", value: "217 82% 41%" },
+      { name: "Info 500", var: "--feedback-info-500", value: "218 81% 25%" },
     ],
     neutral: [
       { name: "Neutral 100", var: "--neutral-100", value: "210 40% 95%" },
@@ -61,6 +83,14 @@ const Showcase = () => {
       { name: "Neutral 300", var: "--neutral-300", value: "210 33% 35%" },
       { name: "Neutral 400", var: "--neutral-400", value: "210 54% 20%" },
       { name: "Neutral 500", var: "--neutral-500", value: "210 81% 8%" },
+    ],
+    background: [
+      { name: "Background Gray", var: "--background-gray", value: "210 100% 99%" },
+      { name: "Background White", var: "--background-white", value: "0 0% 100%" },
+    ],
+    pure: [
+      { name: "Pure White", var: "--pure-white", value: "0 0% 100%" },
+      { name: "Pure Black", var: "--pure-black", value: "0 0% 0%" },
     ],
   };
 
@@ -205,17 +235,17 @@ const Showcase = () => {
                   </CardContent>
                 </Card>
 
-                {/* Feedback Colors */}
+                {/* Success Colors */}
                 <Card>
                   <CardHeader>
-                    <CardTitle>Cores de Feedback</CardTitle>
+                    <CardTitle>Cores de Sucesso</CardTitle>
                     <CardDescription>
-                      Estados de sucesso, alerta, erro e informação
+                      Estados de sucesso e confirmação
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                      {colorTokens.feedback.map((token) => (
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+                      {colorTokens.success.map((token) => (
                         <button
                           key={token.var}
                           onClick={() => copyToken(token.var, `hsl(var(${token.var}))`)}
@@ -223,6 +253,240 @@ const Showcase = () => {
                         >
                           <div
                             className="h-24 w-full transition-transform group-hover:scale-105"
+                            style={{ backgroundColor: `hsl(${token.value})` }}
+                          />
+                          <div className="p-3 space-y-1">
+                            <div className="flex items-center justify-between">
+                              <p className="font-medium text-sm">{token.name}</p>
+                              {copiedToken === token.var ? (
+                                <Check className="h-4 w-4 text-success" />
+                              ) : (
+                                <Copy className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+                              )}
+                            </div>
+                            <code className="text-xs text-muted-foreground">
+                              {token.var}
+                            </code>
+                          </div>
+                        </button>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Error Colors */}
+                <Card>
+                  <CardHeader>
+                    <CardTitle>Cores de Erro</CardTitle>
+                    <CardDescription>
+                      Estados de erro e falha
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+                      {colorTokens.error.map((token) => (
+                        <button
+                          key={token.var}
+                          onClick={() => copyToken(token.var, `hsl(var(${token.var}))`)}
+                          className="group relative overflow-hidden rounded-lg border bg-card transition-all hover:shadow-md"
+                        >
+                          <div
+                            className="h-24 w-full transition-transform group-hover:scale-105"
+                            style={{ backgroundColor: `hsl(${token.value})` }}
+                          />
+                          <div className="p-3 space-y-1">
+                            <div className="flex items-center justify-between">
+                              <p className="font-medium text-sm">{token.name}</p>
+                              {copiedToken === token.var ? (
+                                <Check className="h-4 w-4 text-success" />
+                              ) : (
+                                <Copy className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+                              )}
+                            </div>
+                            <code className="text-xs text-muted-foreground">
+                              {token.var}
+                            </code>
+                          </div>
+                        </button>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Warning Colors */}
+                <Card>
+                  <CardHeader>
+                    <CardTitle>Cores de Alerta</CardTitle>
+                    <CardDescription>
+                      Estados de atenção e aviso
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+                      {colorTokens.warning.map((token) => (
+                        <button
+                          key={token.var}
+                          onClick={() => copyToken(token.var, `hsl(var(${token.var}))`)}
+                          className="group relative overflow-hidden rounded-lg border bg-card transition-all hover:shadow-md"
+                        >
+                          <div
+                            className="h-24 w-full transition-transform group-hover:scale-105"
+                            style={{ backgroundColor: `hsl(${token.value})` }}
+                          />
+                          <div className="p-3 space-y-1">
+                            <div className="flex items-center justify-between">
+                              <p className="font-medium text-sm">{token.name}</p>
+                              {copiedToken === token.var ? (
+                                <Check className="h-4 w-4 text-success" />
+                              ) : (
+                                <Copy className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+                              )}
+                            </div>
+                            <code className="text-xs text-muted-foreground">
+                              {token.var}
+                            </code>
+                          </div>
+                        </button>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Info Colors */}
+                <Card>
+                  <CardHeader>
+                    <CardTitle>Cores de Informação</CardTitle>
+                    <CardDescription>
+                      Estados informativos e neutros
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+                      {colorTokens.info.map((token) => (
+                        <button
+                          key={token.var}
+                          onClick={() => copyToken(token.var, `hsl(var(${token.var}))`)}
+                          className="group relative overflow-hidden rounded-lg border bg-card transition-all hover:shadow-md"
+                        >
+                          <div
+                            className="h-24 w-full transition-transform group-hover:scale-105"
+                            style={{ backgroundColor: `hsl(${token.value})` }}
+                          />
+                          <div className="p-3 space-y-1">
+                            <div className="flex items-center justify-between">
+                              <p className="font-medium text-sm">{token.name}</p>
+                              {copiedToken === token.var ? (
+                                <Check className="h-4 w-4 text-success" />
+                              ) : (
+                                <Copy className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+                              )}
+                            </div>
+                            <code className="text-xs text-muted-foreground">
+                              {token.var}
+                            </code>
+                          </div>
+                        </button>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Neutral Colors */}
+                <Card>
+                  <CardHeader>
+                    <CardTitle>Cores Neutras</CardTitle>
+                    <CardDescription>
+                      Tons de cinza e elementos neutros
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+                      {colorTokens.neutral.map((token) => (
+                        <button
+                          key={token.var}
+                          onClick={() => copyToken(token.var, `hsl(var(${token.var}))`)}
+                          className="group relative overflow-hidden rounded-lg border bg-card transition-all hover:shadow-md"
+                        >
+                          <div
+                            className="h-24 w-full transition-transform group-hover:scale-105"
+                            style={{ backgroundColor: `hsl(${token.value})` }}
+                          />
+                          <div className="p-3 space-y-1">
+                            <div className="flex items-center justify-between">
+                              <p className="font-medium text-sm">{token.name}</p>
+                              {copiedToken === token.var ? (
+                                <Check className="h-4 w-4 text-success" />
+                              ) : (
+                                <Copy className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+                              )}
+                            </div>
+                            <code className="text-xs text-muted-foreground">
+                              {token.var}
+                            </code>
+                          </div>
+                        </button>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Background Colors */}
+                <Card>
+                  <CardHeader>
+                    <CardTitle>Cores de Background</CardTitle>
+                    <CardDescription>
+                      Cores de fundo para layouts
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      {colorTokens.background.map((token) => (
+                        <button
+                          key={token.var}
+                          onClick={() => copyToken(token.var, `hsl(var(${token.var}))`)}
+                          className="group relative overflow-hidden rounded-lg border bg-card transition-all hover:shadow-md"
+                        >
+                          <div
+                            className="h-24 w-full transition-transform group-hover:scale-105 border"
+                            style={{ backgroundColor: `hsl(${token.value})` }}
+                          />
+                          <div className="p-3 space-y-1">
+                            <div className="flex items-center justify-between">
+                              <p className="font-medium text-sm">{token.name}</p>
+                              {copiedToken === token.var ? (
+                                <Check className="h-4 w-4 text-success" />
+                              ) : (
+                                <Copy className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+                              )}
+                            </div>
+                            <code className="text-xs text-muted-foreground">
+                              {token.var}
+                            </code>
+                          </div>
+                        </button>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Pure Colors */}
+                <Card>
+                  <CardHeader>
+                    <CardTitle>Cores Puras</CardTitle>
+                    <CardDescription>
+                      Branco e preto absolutos
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      {colorTokens.pure.map((token) => (
+                        <button
+                          key={token.var}
+                          onClick={() => copyToken(token.var, `hsl(var(${token.var}))`)}
+                          className="group relative overflow-hidden rounded-lg border bg-card transition-all hover:shadow-md"
+                        >
+                          <div
+                            className="h-24 w-full transition-transform group-hover:scale-105 border"
                             style={{ backgroundColor: `hsl(${token.value})` }}
                           />
                           <div className="p-3 space-y-1">

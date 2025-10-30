@@ -309,6 +309,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <Comp
         className={cn(
+          "relative", // for notification positioning
           buttonVariants({ mode: effectiveMode, color: effectiveColor, fullWidth, hasChildren, className }),
           busy && "cursor-not-allowed"
         )}
@@ -318,32 +319,30 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         aria-busy={busy}
         {...props}
       >
-        <span className="relative flex items-center justify-center gap-2">
-          {LeftIcon && !busy && (
-            <LeftIcon className="shrink-0 h-5 w-5" />
-          )}
+        {LeftIcon && !busy && (
+          <LeftIcon className="shrink-0 h-5 w-5" />
+        )}
 
-          {busy && (
-            <Loader
-              size="small"
-              ringColor={loaderColors.ringColor}
-              spinColor={loaderColors.spinColor}
-              className="shrink-0"
-            />
-          )}
+        {busy && (
+          <Loader
+            size="small"
+            ringColor={loaderColors.ringColor}
+            spinColor={loaderColors.spinColor}
+            className="shrink-0"
+          />
+        )}
 
-          {notification && notification > 0 && (
-            <span className="absolute -right-3 -top-3 flex h-6 min-w-[24px] items-center justify-center rounded-full bg-[hsl(var(--brand-primary-300))] px-2 text-xs text-[hsl(var(--pure-white))] outline outline-2 outline-[hsl(var(--pure-white))]">
-              {notification}
-            </span>
-          )}
+        {notification && notification > 0 && (
+          <span className="absolute -right-3 -top-3 flex h-6 min-w-[24px] items-center justify-center rounded-full bg-[hsl(var(--brand-primary-300))] px-2 text-xs text-[hsl(var(--pure-white))] outline outline-2 outline-[hsl(var(--pure-white))]">
+            {notification}
+          </span>
+        )}
 
-          {children && <span>{children}</span>}
+        {children}
 
-          {RightIcon && (
-            <RightIcon className="shrink-0 h-5 w-5" />
-          )}
-        </span>
+        {RightIcon && (
+          <RightIcon className="shrink-0 h-5 w-5" />
+        )}
       </Comp>
     );
   }

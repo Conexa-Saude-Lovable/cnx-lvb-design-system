@@ -31,25 +31,41 @@ Ou use o comando diretamente no chat do Lovable para adicionar a dependência.
 
 ### 3. Importar os estilos (IMPORTANTE!)
 
-No arquivo `src/main.tsx` ou `src/App.tsx` do novo projeto, adicione:
+No arquivo `src/main.tsx` do novo projeto, adicione ANTES do seu index.css:
 
 ```typescript
-// ANTES dos seus estilos locais
-import "conexa-hero-ds/src/index.css"
+// No topo do arquivo, ANTES do import do index.css local
+import "cnx-lvb-design-system/src/index.css"
 import "./index.css" // seus estilos locais depois
 ```
 
 ### 4. Usar os componentes
 
 ```typescript
-import { Button, Card, Loader } from "conexa-hero-ds/src/lib";
+// Importar dos componentes
+import { Button } from "cnx-lvb-design-system/src/lib";
+import { Card, CardHeader, CardTitle, CardContent } from "cnx-lvb-design-system/src/lib";
+import { Loader } from "cnx-lvb-design-system/src/lib";
+import { Alarm, Brain, Chat } from "cnx-lvb-design-system/src/lib";
 
 function App() {
   return (
-    <Card>
-      <Button variant="default">Meu Botão</Button>
-      <Loader />
-    </Card>
+    <div className="container p-8">
+      <Card>
+        <CardHeader>
+          <CardTitle>Teste do Design System</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <Button>Meu Botão</Button>
+          <div className="flex gap-4">
+            <Alarm className="w-6 h-6" />
+            <Brain className="w-6 h-6" />
+            <Chat className="w-6 h-6" />
+          </div>
+          <Loader />
+        </CardContent>
+      </Card>
+    </div>
   );
 }
 ```

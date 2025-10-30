@@ -31,7 +31,43 @@ Peça ao Lovable para instalar o pacote:
 
 Ou use o comando diretamente no chat do Lovable para adicionar a dependência.
 
-### 3. Importar os estilos (IMPORTANTE!)
+### 3. Configurar o Vite (CRUCIAL!)
+
+**MUITO IMPORTANTE**: O projeto consumidor precisa processar TypeScript do design system.
+
+No arquivo `vite.config.ts` do projeto que vai usar o design system, adicione:
+
+```typescript
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react-swc";
+import path from "path";
+
+export default defineConfig({
+  server: {
+    host: "::",
+    port: 8080,
+  },
+  plugins: [react()],
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+    },
+  },
+  // 👇 ADICIONE ESTA CONFIGURAÇÃO
+  optimizeDeps: {
+    include: [
+      'cnx-lvb-design-system',
+    ],
+  },
+  build: {
+    commonjsOptions: {
+      include: [/cnx-lvb-design-system/, /node_modules/],
+    },
+  },
+});
+```
+
+### 4. Importar os estilos (IMPORTANTE!)
 
 No arquivo `src/main.tsx` do novo projeto, adicione ANTES do seu index.css:
 
@@ -41,13 +77,13 @@ import "cnx-lvb-design-system/src/index.css"
 import "./index.css" // seus estilos locais depois
 ```
 
-### 4. Usar os componentes
+### 5. Usar os componentes
 
 ```typescript
-// Importar componentes do pacote
-import { Button, Card, CardHeader, CardTitle, CardContent } from "cnx-lvb-design-system";
-import { Loader } from "cnx-lvb-design-system";
-import { Alarm, Brain, Chat } from "cnx-lvb-design-system";
+// Importar componentes do pacote - use o path completo!
+import { Button, Card, CardHeader, CardTitle, CardContent } from "cnx-lvb-design-system/src/lib";
+import { Loader } from "cnx-lvb-design-system/src/lib";
+import { Alarm, Brain, Chat } from "cnx-lvb-design-system/src/lib";
 
 function App() {
   return (
@@ -208,6 +244,34 @@ Agora o pacote funciona perfeitamente quando instalado via npm/GitHub em outros 
 
 ## 🐛 Troubleshooting
 
+### ⚡ Quick Fix para erros 504
+
+Se você está vendo erros 504 ou "Failed to load resource" no console:
+
+**1. Configure o Vite** no projeto consumidor (`vite.config.ts`):
+```typescript
+export default defineConfig({
+  // ... outras configurações existentes
+  optimizeDeps: {
+    include: ['cnx-lvb-design-system'],
+  },
+  build: {
+    commonjsOptions: {
+      include: [/cnx-lvb-design-system/, /node_modules/],
+    },
+  },
+});
+```
+
+**2. Use o import correto** com `/src/lib`:
+```typescript
+import { Button } from "cnx-lvb-design-system/src/lib";
+```
+
+**3. Limpe o cache**: Peça ao Lovable para reiniciar o servidor de desenvolvimento.
+
+---
+
 ### Estilos não aparecem
 Certifique-se de importar o CSS antes dos seus estilos:
 ```typescript
@@ -216,14 +280,34 @@ import "./index.css"
 ```
 
 ### Componente não encontrado
-Verifique se está exportado em `src/lib/index.ts` e se você está importando do pacote correto:
+Verifique se está exportado em `src/lib/index.ts` e se você está importando do caminho correto:
 ```typescript
-// ✅ Correto
-import { Button } from "cnx-lvb-design-system";
-
-// ❌ Errado
+// ✅ Correto - use o path completo
 import { Button } from "cnx-lvb-design-system/src/lib";
+
+// ❌ Errado - não funciona sem o /src/lib
+import { Button } from "cnx-lvb-design-system";
 ```
+
+### Erros 504 ou arquivos .js não encontrados
+Este erro acontece se o Vite não está configurado para processar o TypeScript do design system.
+
+**Solução**: Adicione a configuração `optimizeDeps` no `vite.config.ts`:
+```typescript
+export default defineConfig({
+  // ... outras configurações
+  optimizeDeps: {
+    include: ['cnx-lvb-design-system'],
+  },
+  build: {
+    commonjsOptions: {
+      include: [/cnx-lvb-design-system/, /node_modules/],
+    },
+  },
+});
+```
+
+Depois, peça ao Lovable: "Limpe o cache e reinicie o servidor de desenvolvimento"
 
 ### Versão antiga após atualizar
 Peça ao Lovable para remover e reinstalar:

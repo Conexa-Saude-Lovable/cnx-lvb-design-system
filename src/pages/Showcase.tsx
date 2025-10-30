@@ -350,21 +350,249 @@ const Showcase = () => {
 
           {/* COMPONENTS TAB */}
           <TabsContent value="components" className="space-y-8">
-            <Card>
-              <CardHeader>
-                <CardTitle>Componentes</CardTitle>
-                <CardDescription>
-                  Em construção - Componentes serão adicionados gradualmente
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="py-12 text-center">
-                <Layout className="h-16 w-16 mx-auto text-muted-foreground mb-4" />
-                <p className="text-lg font-medium mb-2">Componentes em desenvolvimento</p>
+            {/* Button Component Showcase */}
+            <section className="space-y-6">
+              <div>
+                <h2 className="text-3xl font-bold mb-2">Button Component</h2>
                 <p className="text-muted-foreground">
-                  Os componentes do Conexa Hero serão convertidos e adicionados aqui
+                  Sistema completo de botões com múltiplas variantes, estados e configurações
                 </p>
-              </CardContent>
-            </Card>
+              </div>
+
+              {/* Modes & Colors Grid */}
+              <Card>
+                <CardHeader>
+                  <CardTitle>Modes & Colors</CardTitle>
+                  <CardDescription>
+                    Todas as combinações de modes (solid, outline, text, plain) e colors
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-8">
+                  {(["solid", "outline", "text", "plain"] as const).map((mode) => (
+                    <div key={mode} className="space-y-4">
+                      <Badge variant="outline" className="font-mono">
+                        {mode}
+                      </Badge>
+                      <div className="flex flex-wrap gap-3">
+                        {(["primary", "secondary", "tertiary", "error", "success", "warning", "information"] as const).map((color) => (
+                          <Button key={`${mode}-${color}`} mode={mode} color={color}>
+                            {color}
+                          </Button>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </CardContent>
+              </Card>
+
+              {/* With Icons */}
+              <Card>
+                <CardHeader>
+                  <CardTitle>With Icons</CardTitle>
+                  <CardDescription>
+                    Botões com ícones à esquerda, direita ou apenas ícone
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-6">
+                  <div className="space-y-2">
+                    <h3 className="text-sm font-medium">Left Icon</h3>
+                    <div className="flex flex-wrap gap-3">
+                      <Button leftIcon={Sparkles}>Home</Button>
+                      <Button mode="outline" leftIcon={Sparkles} color="error">
+                        Favoritar
+                      </Button>
+                      <Button mode="text" leftIcon={Code2} color="tertiary">
+                        Configurações
+                      </Button>
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <h3 className="text-sm font-medium">Right Icon</h3>
+                    <div className="flex flex-wrap gap-3">
+                      <Button rightIcon={Sparkles}>Home</Button>
+                      <Button mode="outline" rightIcon={Sparkles} color="success">
+                        Favoritar
+                      </Button>
+                      <Button mode="text" rightIcon={Code2} color="information">
+                        Configurações
+                      </Button>
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <h3 className="text-sm font-medium">Both Icons</h3>
+                    <div className="flex flex-wrap gap-3">
+                      <Button leftIcon={Sparkles} rightIcon={Code2}>
+                        Both Icons
+                      </Button>
+                      <Button mode="outline" leftIcon={Code2} rightIcon={Sparkles}>
+                        Outline Both
+                      </Button>
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <h3 className="text-sm font-medium">Icon Only</h3>
+                    <div className="flex flex-wrap gap-3">
+                      <Button leftIcon={Sparkles} />
+                      <Button mode="outline" leftIcon={Code2} color="error" />
+                      <Button mode="text" leftIcon={Code2} color="tertiary" />
+                      <Button mode="plain" leftIcon={Sparkles} />
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* States */}
+              <Card>
+                <CardHeader>
+                  <CardTitle>States</CardTitle>
+                  <CardDescription>
+                    Estados disabled e busy (loading)
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-6">
+                  <div className="space-y-2">
+                    <h3 className="text-sm font-medium">Disabled</h3>
+                    <div className="flex flex-wrap gap-3">
+                      <Button disabled>Solid Disabled</Button>
+                      <Button mode="outline" disabled>
+                        Outline Disabled
+                      </Button>
+                      <Button mode="text" disabled>
+                        Text Disabled
+                      </Button>
+                      <Button mode="plain" disabled>
+                        Plain Disabled
+                      </Button>
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <h3 className="text-sm font-medium">Busy (Loading)</h3>
+                    <div className="flex flex-wrap gap-3">
+                      <Button busy>Loading</Button>
+                      <Button mode="outline" busy color="secondary">
+                        Loading Outline
+                      </Button>
+                      <Button mode="text" busy color="success">
+                        Loading Text
+                      </Button>
+                      <Button busy leftIcon={Sparkles}>
+                        Loading with Icon
+                      </Button>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* With Notification Badge */}
+              <Card>
+                <CardHeader>
+                  <CardTitle>With Notification</CardTitle>
+                  <CardDescription>
+                    Badge de notificação no canto superior direito
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex flex-wrap gap-3">
+                    <Button notification={2}>Notificações</Button>
+                    <Button mode="outline" notification={5} leftIcon={Sparkles}>
+                      Alertas
+                    </Button>
+                    <Button mode="text" notification={99}>
+                      Mensagens
+                    </Button>
+                    <Button notification={3} leftIcon={Sparkles} />
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Full Width */}
+              <Card>
+                <CardHeader>
+                  <CardTitle>Full Width</CardTitle>
+                  <CardDescription>
+                    Botões que ocupam 100% da largura do container
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  <Button fullWidth>Full Width Button</Button>
+                  <Button mode="outline" fullWidth color="secondary">
+                    Full Width Outline
+                  </Button>
+                  <Button mode="text" fullWidth color="success" leftIcon={Sparkles}>
+                    Full Width with Icon
+                  </Button>
+                </CardContent>
+              </Card>
+
+              {/* White Buttons on Dark Background */}
+              <Card>
+                <CardHeader>
+                  <CardTitle>White Buttons</CardTitle>
+                  <CardDescription>
+                    Botões brancos para uso em backgrounds escuros
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="bg-[hsl(var(--brand-primary-300))] p-6 rounded-lg space-y-4">
+                    <div className="flex flex-wrap gap-3">
+                      <Button color="white">White Solid</Button>
+                      <Button mode="outline" color="white">
+                        White Outline
+                      </Button>
+                      <Button mode="text" color="white">
+                        White Text
+                      </Button>
+                      <Button mode="plain" color="white">
+                        White Plain
+                      </Button>
+                    </div>
+                    <div className="flex flex-wrap gap-3">
+                      <Button color="white" leftIcon={Sparkles}>
+                        With Icon
+                      </Button>
+                      <Button mode="outline" color="white" leftIcon={Code2}>
+                        Outline Icon
+                      </Button>
+                      <Button color="white" disabled>
+                        Disabled
+                      </Button>
+                      <Button mode="outline" color="white" busy>
+                        Loading
+                      </Button>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Plain Mode Usage */}
+              <Card>
+                <CardHeader>
+                  <CardTitle>Plain Mode</CardTitle>
+                  <CardDescription>
+                    Modo plain para textos com ação, mantém alinhamento sem padding
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-4">
+                    <p className="text-sm text-muted-foreground">
+                      O plain mode é ideal quando você precisa de um botão que se comporte como
+                      texto, mantendo o alinhamento com outros elementos da página.
+                    </p>
+                    <div className="flex items-center gap-2">
+                      <span className="text-sm">Texto normal ao lado de</span>
+                      <Button mode="plain" color="primary">
+                        botão plain
+                      </Button>
+                      <span className="text-sm">mantém alinhamento</span>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </section>
           </TabsContent>
 
           {/* GUIDELINES TAB */}

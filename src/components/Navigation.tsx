@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Sparkles, Home, Palette, Boxes, Square } from "lucide-react";
+import { Sparkles, Home, Palette, Boxes } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export const Navigation = () => {
@@ -10,7 +10,6 @@ export const Navigation = () => {
     { path: "/", label: "Home", icon: Home },
     { path: "/showcase", label: "Showcase", icon: Palette },
     { path: "/icons", label: "Iconografia", icon: Boxes },
-    { path: "/button-showcase", label: "Buttons", icon: Square },
   ];
 
   return (

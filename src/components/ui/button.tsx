@@ -6,7 +6,7 @@ import { Loader } from "@/components/feedback/Loader";
 import { IconComponent } from "@/components/icons/Icon";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:cursor-not-allowed active:scale-[0.96] rounded-lg border-2 h-10 sm:h-10 md:h-10",
+  "inline-flex items-center justify-center gap-2 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:cursor-not-allowed active:scale-[0.96] rounded-lg border-2 h-10 sm:h-10 md:h-10",
   {
     variants: {
       mode: {

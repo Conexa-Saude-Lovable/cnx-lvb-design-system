@@ -7,60 +7,60 @@
     /* === CONEXA HERO DESIGN SYSTEM === */
     
     /* BRAND COLORS - Primary */
-    --brand-primary-100: 255 100% 98%;
-    --brand-primary-200: 255 94% 91%;
-    --brand-primary-300: 273 75% 40%;
-    --brand-primary-400: 273 76% 29%;
-    --brand-primary-500: 273 73% 17%;
+    --brand-primary-100: 250 100% 98%;
+    --brand-primary-200: 252 95% 92%;
+    --brand-primary-300: 266 77% 41%;
+    --brand-primary-400: 266 75% 30%;
+    --brand-primary-500: 263 74% 17%;
     
     /* BRAND COLORS - Secondary */
-    --brand-secondary-100: 350 100% 97%;
-    --brand-secondary-200: 350 86% 90%;
-    --brand-secondary-300: 349 90% 70%;
-    --brand-secondary-400: 346 81% 41%;
-    --brand-secondary-500: 345 80% 20%;
+    --brand-secondary-100: 350 100% 98%;
+    --brand-secondary-200: 351 92% 90%;
+    --brand-secondary-300: 350 90% 70%;
+    --brand-secondary-400: 346 78% 41%;
+    --brand-secondary-500: 342 76% 20%;
     
     /* BRAND COLORS - Tertiary */
-    --brand-tertiary-100: 312 67% 97%;
-    --brand-tertiary-200: 312 100% 88%;
-    --brand-tertiary-300: 312 100% 79%;
-    --brand-tertiary-400: 312 64% 65%;
-    --brand-tertiary-500: 312 52% 38%;
+    --brand-tertiary-100: 312 63% 97%;
+    --brand-tertiary-200: 310 100% 88%;
+    --brand-tertiary-300: 310 100% 79%;
+    --brand-tertiary-400: 310 64% 65%;
+    --brand-tertiary-500: 310 52% 38%;
     
     /* FEEDBACK COLORS - Success */
-    --feedback-success-100: 118 100% 96%;
+    --feedback-success-100: 117 100% 96%;
     --feedback-success-200: 117 100% 89%;
-    --feedback-success-300: 143 70% 38%;
-    --feedback-success-400: 143 70% 30%;
-    --feedback-success-500: 143 70% 21%;
+    --feedback-success-300: 142 71% 38%;
+    --feedback-success-400: 142 70% 30%;
+    --feedback-success-500: 142 70% 21%;
     
     /* FEEDBACK COLORS - Error */
     --feedback-error-100: 357 100% 95%;
-    --feedback-error-200: 357 100% 80%;
-    --feedback-error-300: 358 77% 44%;
-    --feedback-error-400: 358 79% 32%;
-    --feedback-error-500: 358 82% 20%;
+    --feedback-error-200: 358 100% 80%;
+    --feedback-error-300: 358 78% 44%;
+    --feedback-error-400: 358 78% 32%;
+    --feedback-error-500: 358 78% 20%;
     
     /* FEEDBACK COLORS - Warning */
-    --feedback-warning-100: 45 100% 95%;
+    --feedback-warning-100: 44 100% 95%;
     --feedback-warning-200: 45 98% 77%;
     --feedback-warning-300: 45 87% 50%;
-    --feedback-warning-400: 45 96% 29%;
-    --feedback-warning-500: 45 97% 18%;
+    --feedback-warning-400: 45 93% 29%;
+    --feedback-warning-500: 45 93% 18%;
     
     /* FEEDBACK COLORS - Information */
-    --feedback-info-100: 218 64% 93%;
-    --feedback-info-200: 218 77% 76%;
-    --feedback-info-300: 218 82% 49%;
-    --feedback-info-400: 218 82% 41%;
-    --feedback-info-500: 218 83% 25%;
+    --feedback-info-100: 217 64% 93%;
+    --feedback-info-200: 217 77% 76%;
+    --feedback-info-300: 217 82% 49%;
+    --feedback-info-400: 217 82% 41%;
+    --feedback-info-500: 218 81% 25%;
     
     /* NEUTRAL COLORS */
-    --neutral-100: 210 40% 94%;
-    --neutral-200: 210 26% 59%;
+    --neutral-100: 210 40% 95%;
+    --neutral-200: 209 26% 59%;
     --neutral-300: 210 33% 35%;
-    --neutral-400: 210 50% 20%;
-    --neutral-500: 210 77% 9%;
+    --neutral-400: 210 54% 20%;
+    --neutral-500: 210 81% 8%;
     
     /* BACKGROUND COLORS */
     --background-gray: 210 100% 99%;
@@ -72,58 +72,58 @@
     
     /* SEMANTIC TOKENS - Mapped for shadcn compatibility */
     --background: 0 0% 100%;
-    --foreground: 210 77% 9%;
+    --foreground: 210 81% 8%;
     
-    --primary: 273 75% 40%;
-    --primary-hover: 255 100% 98%;
-    --primary-active: 273 73% 17%;
+    --primary: 266 77% 41%;
+    --primary-hover: 250 100% 98%;
+    --primary-active: 263 74% 17%;
     --primary-foreground: 0 0% 100%;
     
-    --secondary: 349 90% 70%;
-    --secondary-hover: 346 81% 41%;
-    --secondary-active: 345 80% 20%;
+    --secondary: 350 90% 70%;
+    --secondary-hover: 346 78% 41%;
+    --secondary-active: 342 76% 20%;
     --secondary-foreground: 0 0% 100%;
     
-    --success: 143 70% 38%;
+    --success: 142 71% 38%;
     --success-foreground: 0 0% 100%;
     
     --warning: 45 87% 50%;
-    --warning-foreground: 210 77% 9%;
+    --warning-foreground: 210 81% 8%;
     
-    --error: 358 77% 44%;
+    --error: 358 78% 44%;
     --error-foreground: 0 0% 100%;
     
-    --info: 218 82% 49%;
+    --info: 217 82% 49%;
     --info-foreground: 0 0% 100%;
     
-    --muted: 210 40% 94%;
+    --muted: 210 40% 95%;
     --muted-foreground: 210 33% 35%;
     
-    --accent: 312 100% 88%;
-    --accent-foreground: 210 77% 9%;
+    --accent: 310 100% 88%;
+    --accent-foreground: 210 81% 8%;
     
-    --destructive: 358 77% 44%;
+    --destructive: 358 78% 44%;
     --destructive-foreground: 0 0% 100%;
     
-    --border: 210 26% 59%;
-    --input: 210 40% 94%;
-    --ring: 273 75% 40%;
+    --border: 209 26% 59%;
+    --input: 210 40% 95%;
+    --ring: 266 77% 41%;
     
     --card: 0 0% 100%;
-    --card-foreground: 210 77% 9%;
+    --card-foreground: 210 81% 8%;
     
     --popover: 0 0% 100%;
-    --popover-foreground: 210 77% 9%;
+    --popover-foreground: 210 81% 8%;
     
     /* SIDEBAR */
     --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 210 77% 9%;
-    --sidebar-primary: 273 75% 40%;
+    --sidebar-foreground: 210 81% 8%;
+    --sidebar-primary: 266 77% 41%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 210 40% 94%;
-    --sidebar-accent-foreground: 210 77% 9%;
-    --sidebar-border: 210 26% 59%;
-    --sidebar-ring: 273 75% 40%;
+    --sidebar-accent: 210 40% 95%;
+    --sidebar-accent-foreground: 210 81% 8%;
+    --sidebar-border: 209 26% 59%;
+    --sidebar-ring: 266 77% 41%;
     
     /* RADIUS */
     --radius-none: 0px;
@@ -158,42 +158,42 @@
   }
 
   .dark {
-    --background: 210 77% 9%;
+    --background: 210 81% 8%;
     --foreground: 0 0% 100%;
     
-    --primary: 255 94% 91%;
-    --primary-hover: 255 100% 98%;
-    --primary-active: 273 75% 40%;
-    --primary-foreground: 210 77% 9%;
+    --primary: 252 95% 92%;
+    --primary-hover: 250 100% 98%;
+    --primary-active: 266 77% 41%;
+    --primary-foreground: 210 81% 8%;
     
-    --secondary: 350 86% 90%;
-    --secondary-hover: 350 100% 97%;
-    --secondary-active: 349 90% 70%;
-    --secondary-foreground: 210 77% 9%;
+    --secondary: 351 92% 90%;
+    --secondary-hover: 350 100% 98%;
+    --secondary-active: 350 90% 70%;
+    --secondary-foreground: 210 81% 8%;
     
-    --muted: 210 50% 20%;
-    --muted-foreground: 210 40% 94%;
+    --muted: 210 54% 20%;
+    --muted-foreground: 210 40% 95%;
     
-    --accent: 312 52% 38%;
+    --accent: 310 52% 38%;
     --accent-foreground: 0 0% 100%;
     
     --border: 210 33% 35%;
-    --input: 210 50% 20%;
+    --input: 210 54% 20%;
     
-    --card: 210 50% 20%;
+    --card: 210 54% 20%;
     --card-foreground: 0 0% 100%;
     
-    --popover: 210 50% 20%;
+    --popover: 210 54% 20%;
     --popover-foreground: 0 0% 100%;
     
-    --sidebar-background: 210 50% 20%;
+    --sidebar-background: 210 54% 20%;
     --sidebar-foreground: 0 0% 100%;
-    --sidebar-primary: 255 94% 91%;
-    --sidebar-primary-foreground: 210 77% 9%;
+    --sidebar-primary: 252 95% 92%;
+    --sidebar-primary-foreground: 210 81% 8%;
     --sidebar-accent: 210 33% 35%;
     --sidebar-accent-foreground: 0 0% 100%;
     --sidebar-border: 210 33% 35%;
-    --sidebar-ring: 255 94% 91%;
+    --sidebar-ring: 252 95% 92%;
   }
 }
 

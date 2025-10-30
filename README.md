@@ -1,115 +1,188 @@
-# Conexa Hero Design System - Lovable Edition
+# Conexa Hero Design System
 
-Sistema de design unificado da Conexa Saúde para projetos desenvolvidos com Lovable.
+Design system com componentes React, ícones customizados e tokens de design para projetos Conexa.
 
-## 🎯 Objetivo
+## 🎨 O que inclui
 
-Manter consistência visual entre múltiplos projetos Lovable através de:
-- **Tokens de design centralizados** (cores, espaçamentos, tipografia)
-- **Componentes reutilizáveis** convertidos do Storybook original
-- **Guidelines claras** de uso e boas práticas
+- **Componentes UI**: Todos os componentes shadcn/ui customizados
+- **Design Tokens**: Cores, espaçamentos, raios, sombras
+- **Ícones**: Biblioteca completa de ícones e ilustrações customizadas
+- **Tipografia**: Sistema tipográfico consistente
+- **Temas**: Suporte a light/dark mode
 
-## 📦 Estrutura do Projeto
+## 📦 Instalação em outro projeto Lovable
 
+### 1. Obter o link do GitHub
+
+Copie a URL do seu repositório GitHub. Exemplo:
 ```
-src/
-├── index.css              # Todos os design tokens (HSL)
-├── tailwind.config.ts     # Configuração Tailwind com tokens
-├── components/
-│   ├── ui/               # Componentes shadcn customizados
-│   └── conexa/           # Componentes Conexa convertidos
-└── pages/
-    ├── Index.tsx         # Home do projeto
-    └── Showcase.tsx      # Galeria visual de tokens/componentes
+https://github.com/seu-usuario/conexa-hero-ds
 ```
 
-## 🚀 Como Usar
+### 2. No novo projeto Lovable
 
-### Opção 1: Remix (Recomendado para começar)
+Peça ao Lovable para instalar o pacote:
 
-1. No Lovable: **Settings → Remix this project**
-2. Novo projeto é criado com design system completo
-3. Comece a desenvolver usando os tokens e componentes
+```
+"Instale o design system usando o pacote github:seu-usuario/conexa-hero-ds"
+```
 
-### Opção 2: NPM Package (Em desenvolvimento)
+Ou use o comando diretamente no chat do Lovable para adicionar a dependência.
 
-```bash
-npm install @conexa/hero-lovable
+### 3. Importar os estilos (IMPORTANTE!)
+
+No arquivo `src/main.tsx` ou `src/App.tsx` do novo projeto, adicione:
+
+```typescript
+// ANTES dos seus estilos locais
+import "conexa-hero-ds/src/index.css"
+import "./index.css" // seus estilos locais depois
+```
+
+### 4. Usar os componentes
+
+```typescript
+import { Button, Card, Loader } from "conexa-hero-ds/src/lib";
+
+function App() {
+  return (
+    <Card>
+      <Button variant="default">Meu Botão</Button>
+      <Loader />
+    </Card>
+  );
+}
+```
+
+## 🔄 Atualizar o Design System
+
+Quando você fizer alterações neste projeto:
+
+1. **Automático no GitHub**: As mudanças vão para o GitHub automaticamente via Lovable
+2. **No projeto que usa o DS**: Peça ao Lovable:
+   ```
+   "Atualize o pacote conexa-hero-ds para a versão mais recente"
+   ```
+   
+   Ou rode manualmente (se tiver acesso ao terminal):
+   ```bash
+   npm update conexa-hero-ds
+   # ou forçar reinstalação
+   npm uninstall conexa-hero-ds
+   npm install github:seu-usuario/conexa-hero-ds
+   ```
+
+## 🎯 Componentes Disponíveis
+
+### Componentes UI (shadcn)
+- Button, Card, Input, Label
+- Dialog, Sheet, Drawer
+- Select, Checkbox, Switch, Slider
+- Tabs, Accordion, Collapsible
+- Table, Form, Calendar
+- Toast, Alert, Badge
+- Sidebar, Navigation Menu
+- E todos os outros componentes shadcn/ui
+
+### Componentes Customizados
+- `Loader` - Componente de loading
+- Todos os ícones customizados
+- Ilustrações
+
+### Ícones Disponíveis
+
+```typescript
+import { 
+  Alarm, 
+  Analytics, 
+  Brain,
+  Calendar,
+  Chat,
+  // ... e muitos outros
+} from "conexa-hero-ds/src/lib";
+
+// Emojis
+import { HappyFace, SadFace, AngryFace } from "conexa-hero-ds/src/lib";
+
+// Ilustrações
+import { Doctors, HealthTeam, MedicHappyPrimary } from "conexa-hero-ds/src/lib";
 ```
 
 ## 🎨 Design Tokens
 
-Todos os tokens estão definidos em `src/index.css` usando HSL:
+Os tokens são automaticamente aplicados quando você importa o CSS. Use as classes Tailwind:
 
-### Cores Principais
-- `--primary`: Cor primária da marca
-- `--primary-hover`: Estado hover
-- `--primary-active`: Estado ativo
-- `--primary-foreground`: Texto sobre primária
+```typescript
+// Cores
+<div className="bg-primary text-primary-foreground">Primary</div>
+<div className="bg-secondary text-secondary-foreground">Secondary</div>
+<div className="bg-success text-success-foreground">Success</div>
 
-### Cores de Feedback
-- `--success`: Ações de sucesso
-- `--warning`: Alertas
-- `--error`: Erros
-- `--info`: Informações
+// Raios
+<div className="rounded-lg">8px radius</div>
+<div className="rounded-xl">16px radius</div>
 
-### Uso nos Componentes
-
-```tsx
-// ✅ Usando tokens do design system
-<Button className="bg-primary text-primary-foreground">
-  Ação Primária
-</Button>
-
-// ❌ Evitar cores diretas
-<Button className="bg-blue-500 text-white">
-  Não fazer assim
-</Button>
+// Sombras
+<div className="shadow-md">Sombra média</div>
+<div className="shadow-lg">Sombra grande</div>
 ```
 
-## 📖 Showcase
+## 📚 Ver todos os componentes
 
-Acesse `/showcase` para visualizar:
-- Todos os design tokens com valores copiáveis
-- Componentes disponíveis e suas variações
-- Guidelines de uso
+Acesse a rota `/showcase` neste projeto para ver:
+- Todos os tokens de design
+- Paleta de cores completa com valores HEX
+- Variantes de componentes
+- Exemplos de uso
 
-## 🔄 Workflow de Conversão
+## 🛠️ Desenvolvimento
 
-1. Componente selecionado do Storybook original
-2. Análise de props, variantes e estados
-3. Conversão para React + Tailwind usando tokens
-4. Validação e ajustes
-5. Commit no GitHub
+### Estrutura
+```
+src/
+├── components/
+│   ├── ui/              # Componentes shadcn
+│   ├── icons/           # Ícones customizados
+│   └── feedback/        # Componentes de feedback
+├── lib/
+│   ├── index.ts         # Exports principais
+│   └── utils.ts         # Utilitários
+├── hooks/               # React hooks
+└── index.css            # Design tokens
+```
 
-## 🛠️ Tecnologias
+### Adicionar novos componentes
 
-- **React** + **TypeScript**
-- **Tailwind CSS** com design tokens
-- **shadcn/ui** como base de componentes
-- **Vite** como bundler
+1. Crie o componente em `src/components/`
+2. Exporte em `src/lib/index.ts`
+3. Push para GitHub (automático no Lovable)
+4. Atualize nos projetos que usam
 
-## 📚 Referências
+## 🐛 Troubleshooting
 
-- [Storybook Original](https://conexa-hero.conexasaude.com.br/)
-- [Lovable Documentation](https://docs.lovable.dev/)
+### Estilos não aparecem
+Certifique-se de importar o CSS antes dos seus estilos:
+```typescript
+import "conexa-hero-ds/src/index.css"
+import "./index.css"
+```
 
-## 🚧 Status
+### Componente não encontrado
+Verifique se está exportado em `src/lib/index.ts`
 
-**Em construção** - Componentes sendo convertidos gradualmente do Storybook original.
+### Versão antiga após atualizar
+Peça ao Lovable para remover e reinstalar:
+```
+"Remova o pacote conexa-hero-ds e instale novamente da versão mais recente do GitHub"
+```
 
-### Roadmap
-- [x] Estrutura base de tokens
-- [x] Página showcase
-- [ ] Conversão de componentes principais (Button, Input, Card)
-- [ ] Conversão de componentes de formulário
-- [ ] Conversão de componentes de navegação
-- [ ] Publicação como NPM package
+### Path não resolve
+Certifique-se de importar com o caminho completo:
+```typescript
+import { Button } from "conexa-hero-ds/src/lib"
+import "conexa-hero-ds/src/index.css"
+```
 
 ## 📄 Licença
 
-Uso interno - Conexa Saúde
-
----
-
-**Desenvolvido com ❤️ pela equipe Conexa**
+Propriedade de Conexa Hero.

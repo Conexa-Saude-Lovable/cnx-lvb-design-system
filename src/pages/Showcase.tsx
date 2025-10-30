@@ -350,10 +350,33 @@ const Showcase = () => {
 
           {/* COMPONENTS TAB */}
           <TabsContent value="components" className="space-y-8">
+            {/* Components List (Index) */}
+            <Card>
+              <CardHeader>
+                <CardTitle>Componentes</CardTitle>
+                <CardDescription>
+                  Escolha um componente para visualizar suas variantes e exemplos
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  <a href="#component-button" className="group rounded-lg border p-4 hover:bg-accent transition-colors story-link">
+                    <div className="flex items-center gap-3">
+                      <Sparkles className="h-5 w-5 text-primary" />
+                      <div>
+                        <p className="font-medium">Button</p>
+                        <p className="text-sm text-muted-foreground">Ações, CTA e links com estados</p>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </CardContent>
+            </Card>
+
             {/* Button Component Showcase */}
-            <section className="space-y-6">
+            <section id="component-button" className="space-y-6">
               <div>
-                <h2 className="text-3xl font-bold mb-2">Button Component</h2>
+                <h2 className="text-3xl font-bold mb-2">Button</h2>
                 <p className="text-muted-foreground">
                   Sistema completo de botões com múltiplas variantes, estados e configurações
                 </p>

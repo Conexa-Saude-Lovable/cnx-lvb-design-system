@@ -235,6 +235,45 @@ const Showcase = () => {
                   </CardContent>
                 </Card>
 
+                {/* Tertiary Colors */}
+                <Card>
+                  <CardHeader>
+                    <CardTitle>Cores Terciárias</CardTitle>
+                    <CardDescription>
+                      Destaques e elementos especiais
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+                      {colorTokens.tertiary.map((token) => (
+                        <button
+                          key={token.var}
+                          onClick={() => copyToken(token.hex, token.hex)}
+                          className="group relative overflow-hidden rounded-lg border bg-card transition-all hover:shadow-md"
+                        >
+                          <div
+                            className="h-24 w-full transition-transform group-hover:scale-105"
+                            style={{ backgroundColor: `hsl(${token.value})` }}
+                          />
+                          <div className="p-3 space-y-1">
+                            <div className="flex items-center justify-between">
+                              <p className="font-medium text-sm">{token.name}</p>
+                              {copiedToken === token.hex ? (
+                                <Check className="h-4 w-4 text-success" />
+                              ) : (
+                                <Copy className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+                              )}
+                            </div>
+                            <code className="text-xs text-muted-foreground block">
+                              {token.hex}
+                            </code>
+                          </div>
+                        </button>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
                 {/* Success Colors */}
                 <Card>
                   <CardHeader>

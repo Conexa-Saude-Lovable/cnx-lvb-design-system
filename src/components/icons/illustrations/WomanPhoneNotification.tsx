@@ -1,5 +1,5 @@
 import { IllustrationProps } from "./Illustration";
-import WomanPhoneSvg from "@/assets/illustrations/woman-phone-notification.svg";
+import WomanPhoneSvg from "../../../assets/illustrations/woman-phone-notification.svg";
 
 export const WomanPhoneNotification: React.FC<IllustrationProps> = ({ 
   width = 102, 

@@ -1,5 +1,5 @@
 import { IllustrationProps } from "./Illustration";
-import CardBackSvg from "@/assets/illustrations/card-back.svg";
+import CardBackSvg from "../../../assets/illustrations/card-back.svg";
 
 export const CardBack: React.FC<IllustrationProps> = ({ 
   width = 520, 

@@ -1,5 +1,5 @@
 import { IllustrationProps } from "./Illustration";
-import ManAdvocateSvg from "@/assets/illustrations/man-advocate.svg";
+import ManAdvocateSvg from "../../../assets/illustrations/man-advocate.svg";
 
 export const ManAdvocate: React.FC<IllustrationProps> = ({ 
   width = 241, 

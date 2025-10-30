@@ -185,6 +185,7 @@ src/
 // ❌ Não funcionava quando instalado como pacote
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import CardFrontSvg from "@/assets/illustrations/card-front.svg";
 ```
 
 **Solução implementada:**
@@ -192,16 +193,18 @@ import { Button } from "@/components/ui/button";
 // ✅ Agora usa caminhos relativos
 import { cn } from "../../lib/utils";
 import { Button } from "./button";
+import CardFrontSvg from "../../../assets/illustrations/card-front.svg";
 ```
 
 **Arquivos corrigidos:**
 - ✅ Todos os 44 componentes UI em `src/components/ui/`
 - ✅ Componente `Loader` em `src/components/feedback/`
 - ✅ Arquivo `button.tsx` com imports de `Loader` e `Icon`
+- ✅ Todos os 32 componentes de ilustração em `src/components/icons/illustrations/`
 - ✅ Arquivos com interdependências entre componentes
 
 **Resultado:**
-Agora o pacote funciona perfeitamente quando instalado via npm/GitHub em outros projetos!
+Agora o pacote funciona perfeitamente quando instalado via npm/GitHub em outros projetos, incluindo as ilustrações SVG!
 
 ## 🐛 Troubleshooting
 

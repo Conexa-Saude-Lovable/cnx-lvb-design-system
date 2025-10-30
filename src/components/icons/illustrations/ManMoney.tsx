@@ -1,5 +1,5 @@
 import { IllustrationProps } from "./Illustration";
-import ManMoneySvg from "@/assets/illustrations/man-money.svg";
+import ManMoneySvg from "../../../assets/illustrations/man-money.svg";
 
 export const ManMoney: React.FC<IllustrationProps> = ({ 
   width = 241, 

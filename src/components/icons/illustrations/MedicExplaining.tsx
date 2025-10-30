@@ -1,5 +1,5 @@
 import { IllustrationProps } from "./Illustration";
-import MedicExplainingSvg from "@/assets/illustrations/medic-explaining.svg";
+import MedicExplainingSvg from "../../../assets/illustrations/medic-explaining.svg";
 
 export const MedicExplaining: React.FC<IllustrationProps> = ({ 
   width = 211, 

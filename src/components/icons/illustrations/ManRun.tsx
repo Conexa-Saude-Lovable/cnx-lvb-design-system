@@ -1,5 +1,5 @@
 import { IllustrationProps } from "./Illustration";
-import ManRunSvg from "@/assets/illustrations/man-run.svg";
+import ManRunSvg from "../../../assets/illustrations/man-run.svg";
 
 export const ManRun: React.FC<IllustrationProps> = ({ 
   width = 205, 

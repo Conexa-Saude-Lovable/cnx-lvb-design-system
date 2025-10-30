@@ -1,5 +1,5 @@
 import { IllustrationProps } from "./Illustration";
-import MedicCalendarSvg from "@/assets/illustrations/medic-calendar.svg";
+import MedicCalendarSvg from "../../../assets/illustrations/medic-calendar.svg";
 
 export const MedicCalendar: React.FC<IllustrationProps> = ({ 
   width = 240, 

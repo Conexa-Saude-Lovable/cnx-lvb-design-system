@@ -1,5 +1,5 @@
 import { IllustrationProps } from "./Illustration";
-import HealthClipboardSvg from "@/assets/illustrations/health-clipboard.svg";
+import HealthClipboardSvg from "../../../assets/illustrations/health-clipboard.svg";
 
 export const HealthClipboard: React.FC<IllustrationProps> = ({ 
   width = 241, 

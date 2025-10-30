@@ -1,6 +1,5 @@
 {
-  "name": "vite_react_shadcn_ts",
-  "private": true,
+  "name": "cnx-lvb-design-system",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -9,6 +8,12 @@
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview"
+  },
+  "main": "./src/lib/index.ts",
+  "exports": {
+    ".": "./src/lib/index.ts",
+    "./src/lib": "./src/lib/index.ts",
+    "./src/index.css": "./src/index.css"
   },
   "dependencies": {
     "@fontsource/source-sans-3": "^5.2.9",

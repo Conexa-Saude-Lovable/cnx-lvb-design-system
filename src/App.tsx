@@ -7,6 +7,7 @@ import { Navigation } from "@/components/Navigation";
 import Index from "./pages/Index";
 import Showcase from "./pages/Showcase";
 import Icons from "./pages/Icons";
+import ButtonShowcase from "./pages/ButtonShowcase";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -22,6 +23,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/showcase" element={<Showcase />} />
           <Route path="/icons" element={<Icons />} />
+          <Route path="/button-showcase" element={<ButtonShowcase />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

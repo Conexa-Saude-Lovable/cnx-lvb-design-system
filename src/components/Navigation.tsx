@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Sparkles, Home, Palette, Boxes } from "lucide-react";
+import { Sparkles, Home, Palette, Boxes, Square } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export const Navigation = () => {
@@ -10,6 +10,7 @@ export const Navigation = () => {
     { path: "/", label: "Home", icon: Home },
     { path: "/showcase", label: "Showcase", icon: Palette },
     { path: "/icons", label: "Iconografia", icon: Boxes },
+    { path: "/button-showcase", label: "Buttons", icon: Square },
   ];
 
   return (
@@ -31,11 +32,11 @@ export const Navigation = () => {
             return (
               <Button
                 key={item.path}
-                variant={isActive ? "default" : "ghost"}
-                size="sm"
+                mode={isActive ? "solid" : "text"}
+                color="primary"
                 asChild
                 className={cn(
-                  "gap-2",
+                  "gap-2 h-9 px-3",
                   isActive && "pointer-events-none"
                 )}
               >

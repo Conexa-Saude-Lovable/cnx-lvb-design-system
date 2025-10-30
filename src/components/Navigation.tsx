@@ -29,21 +29,20 @@ export const Navigation = () => {
             const Icon = item.icon;
             const isActive = location.pathname === item.path;
             return (
-              <Button
+              <Link
                 key={item.path}
-                mode={isActive ? "solid" : "text"}
-                color="primary"
-                asChild
+                to={item.path}
                 className={cn(
-                  "gap-2 h-9 px-3",
+                  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:cursor-not-allowed border-2 h-10 px-4",
+                  isActive 
+                    ? "bg-[hsl(var(--brand-primary-300))] text-[hsl(var(--pure-white))] border-transparent hover:bg-[hsl(var(--brand-primary-400))]"
+                    : "bg-transparent border-transparent text-[hsl(var(--brand-primary-300))] hover:bg-[hsl(var(--brand-primary-100))]",
                   isActive && "pointer-events-none"
                 )}
               >
-                <Link to={item.path}>
-                  <Icon className="h-4 w-4" />
-                  <span className="hidden sm:inline">{item.label}</span>
-                </Link>
-              </Button>
+                <Icon className="h-4 w-4 shrink-0" />
+                <span className="hidden sm:inline">{item.label}</span>
+              </Link>
             );
           })}
         </nav>

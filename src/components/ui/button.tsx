@@ -1,9 +1,9 @@
 import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
-import { cn } from "@/lib/utils";
-import { Loader } from "@/components/feedback/Loader";
-import { IconComponent } from "@/components/icons/Icon";
+import { cn } from "../../lib/utils";
+import { Loader } from "../feedback/Loader";
+import { IconComponent } from "../icons/Icon";
 
 const buttonVariants = cva(
   "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:cursor-not-allowed active:scale-[0.96] rounded-lg border-2 h-10 sm:h-10 md:h-10",

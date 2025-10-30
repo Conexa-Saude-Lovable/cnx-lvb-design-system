@@ -2,6 +2,8 @@
 
 Design system com componentes React, ícones customizados e tokens de design para projetos Conexa.
 
+> ✅ **v1.1.0** - Agora com imports corrigidos para uso como pacote externo!
+
 ## 🎨 O que inclui
 
 - **Componentes UI**: Todos os componentes shadcn/ui customizados
@@ -16,7 +18,7 @@ Design system com componentes React, ícones customizados e tokens de design par
 
 Copie a URL do seu repositório GitHub. Exemplo:
 ```
-https://github.com/seu-usuario/conexa-hero-ds
+https://github.com/Conexa-Saude-Lovable/cnx-lvb-design-system
 ```
 
 ### 2. No novo projeto Lovable
@@ -24,7 +26,7 @@ https://github.com/seu-usuario/conexa-hero-ds
 Peça ao Lovable para instalar o pacote:
 
 ```
-"Instale o design system usando o pacote github:seu-usuario/conexa-hero-ds"
+"Instale o design system usando o pacote github:Conexa-Saude-Lovable/cnx-lvb-design-system"
 ```
 
 Ou use o comando diretamente no chat do Lovable para adicionar a dependência.
@@ -42,11 +44,10 @@ import "./index.css" // seus estilos locais depois
 ### 4. Usar os componentes
 
 ```typescript
-// Importar dos componentes
-import { Button } from "cnx-lvb-design-system/src/lib";
-import { Card, CardHeader, CardTitle, CardContent } from "cnx-lvb-design-system/src/lib";
-import { Loader } from "cnx-lvb-design-system/src/lib";
-import { Alarm, Brain, Chat } from "cnx-lvb-design-system/src/lib";
+// Importar componentes do pacote
+import { Button, Card, CardHeader, CardTitle, CardContent } from "cnx-lvb-design-system";
+import { Loader } from "cnx-lvb-design-system";
+import { Alarm, Brain, Chat } from "cnx-lvb-design-system";
 
 function App() {
   return (
@@ -56,13 +57,13 @@ function App() {
           <CardTitle>Teste do Design System</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
-          <Button>Meu Botão</Button>
+          <Button mode="solid" color="primary">Meu Botão</Button>
           <div className="flex gap-4">
-            <Alarm className="w-6 h-6" />
-            <Brain className="w-6 h-6" />
-            <Chat className="w-6 h-6" />
+            <Alarm size={24} />
+            <Brain size={24} />
+            <Chat size={24} />
           </div>
-          <Loader />
+          <Loader size="medium" />
         </CardContent>
       </Card>
     </div>
@@ -77,15 +78,15 @@ Quando você fizer alterações neste projeto:
 1. **Automático no GitHub**: As mudanças vão para o GitHub automaticamente via Lovable
 2. **No projeto que usa o DS**: Peça ao Lovable:
    ```
-   "Atualize o pacote conexa-hero-ds para a versão mais recente"
+   "Atualize o pacote cnx-lvb-design-system para a versão mais recente"
    ```
    
    Ou rode manualmente (se tiver acesso ao terminal):
    ```bash
-   npm update conexa-hero-ds
+   npm update cnx-lvb-design-system
    # ou forçar reinstalação
-   npm uninstall conexa-hero-ds
-   npm install github:seu-usuario/conexa-hero-ds
+   npm uninstall cnx-lvb-design-system
+   npm install github:Conexa-Saude-Lovable/cnx-lvb-design-system
    ```
 
 ## 🎯 Componentes Disponíveis
@@ -115,13 +116,13 @@ import {
   Calendar,
   Chat,
   // ... e muitos outros
-} from "conexa-hero-ds/src/lib";
+} from "cnx-lvb-design-system";
 
 // Emojis
-import { HappyFace, SadFace, AngryFace } from "conexa-hero-ds/src/lib";
+import { HappyFace, SadFace, AngryFace } from "cnx-lvb-design-system";
 
 // Ilustrações
-import { Doctors, HealthTeam, MedicHappyPrimary } from "conexa-hero-ds/src/lib";
+import { Doctors, HealthTeam, MedicHappyPrimary } from "cnx-lvb-design-system";
 ```
 
 ## 🎨 Design Tokens
@@ -164,6 +165,7 @@ src/
 │   ├── index.ts         # Exports principais
 │   └── utils.ts         # Utilitários
 ├── hooks/               # React hooks
+├── index.ts             # Entry point do pacote
 └── index.css            # Design tokens
 ```
 
@@ -174,30 +176,63 @@ src/
 3. Push para GitHub (automático no Lovable)
 4. Atualize nos projetos que usam
 
+## 🔧 Correções Recentes (v1.1.0)
+
+### ✅ Problema resolvido: Imports com alias `@/`
+
+**Problema anterior:**
+```typescript
+// ❌ Não funcionava quando instalado como pacote
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+```
+
+**Solução implementada:**
+```typescript
+// ✅ Agora usa caminhos relativos
+import { cn } from "../../lib/utils";
+import { Button } from "./button";
+```
+
+**Arquivos corrigidos:**
+- ✅ Todos os 44 componentes UI em `src/components/ui/`
+- ✅ Componente `Loader` em `src/components/feedback/`
+- ✅ Arquivo `button.tsx` com imports de `Loader` e `Icon`
+- ✅ Arquivos com interdependências entre componentes
+
+**Resultado:**
+Agora o pacote funciona perfeitamente quando instalado via npm/GitHub em outros projetos!
+
 ## 🐛 Troubleshooting
 
 ### Estilos não aparecem
 Certifique-se de importar o CSS antes dos seus estilos:
 ```typescript
-import "conexa-hero-ds/src/index.css"
+import "cnx-lvb-design-system/src/index.css"
 import "./index.css"
 ```
 
 ### Componente não encontrado
-Verifique se está exportado em `src/lib/index.ts`
+Verifique se está exportado em `src/lib/index.ts` e se você está importando do pacote correto:
+```typescript
+// ✅ Correto
+import { Button } from "cnx-lvb-design-system";
+
+// ❌ Errado
+import { Button } from "cnx-lvb-design-system/src/lib";
+```
 
 ### Versão antiga após atualizar
 Peça ao Lovable para remover e reinstalar:
 ```
-"Remova o pacote conexa-hero-ds e instale novamente da versão mais recente do GitHub"
+"Remova o pacote cnx-lvb-design-system e instale novamente da versão mais recente do GitHub"
 ```
 
-### Path não resolve
-Certifique-se de importar com o caminho completo:
-```typescript
-import { Button } from "conexa-hero-ds/src/lib"
-import "conexa-hero-ds/src/index.css"
-```
+### Erro "Cannot find module"
+Certifique-se de que:
+1. O pacote está instalado: `npm list cnx-lvb-design-system`
+2. Você está importando diretamente do pacote: `import { Button } from "cnx-lvb-design-system"`
+3. O arquivo `src/index.ts` existe no repositório (entry point do pacote)
 
 ## 📄 Licença
 

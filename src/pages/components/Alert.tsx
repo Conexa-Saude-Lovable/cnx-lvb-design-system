@@ -7,7 +7,7 @@ const AlertComponent = () => {
     information: true,
     warning: true,
     error: true,
-    default: true,
+    primary: true,
     withAction: true,
     simple: true,
   });
@@ -22,7 +22,7 @@ const AlertComponent = () => {
       information: true,
       warning: true,
       error: true,
-      default: true,
+      primary: true,
       withAction: true,
       simple: true,
     });
@@ -88,12 +88,12 @@ const AlertComponent = () => {
               />
             )}
 
-            {alerts.default && (
+            {alerts.primary && (
               <Alert
-                variant="default"
+                variant="primary"
                 title="Notificação padrão"
                 description="Esta é uma mensagem padrão sem classificação específica."
-                onClose={() => handleClose("default")}
+                onClose={() => handleClose("primary")}
               />
             )}
           </div>

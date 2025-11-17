@@ -14,11 +14,11 @@ const alertVariants = cva(
         information: "bg-feedback-info-100 border-feedback-info-300",
         warning: "bg-feedback-warning-100 border-feedback-warning-300",
         error: "bg-feedback-error-100 border-feedback-error-300",
-        default: "bg-brand-primary-100 border-brand-primary-300",
+        primary: "bg-brand-primary-100 border-brand-primary-300",
       },
     },
     defaultVariants: {
-      variant: "default",
+      variant: "primary",
     },
   }
 );
@@ -28,7 +28,7 @@ const iconMap = {
   information: Bulb,
   warning: Ring,
   error: DoubleCheck,
-  default: Bulb,
+  primary: Bulb,
 };
 
 const iconColorMap = {
@@ -36,7 +36,7 @@ const iconColorMap = {
   information: "hsl(var(--feedback-info-400))",
   warning: "hsl(var(--feedback-warning-400))",
   error: "hsl(var(--feedback-error-400))",
-  default: "hsl(var(--brand-primary-400))",
+  primary: "hsl(var(--brand-primary-400))",
 };
 
 const titleColorMap = {
@@ -44,7 +44,7 @@ const titleColorMap = {
   information: "text-feedback-info-500",
   warning: "text-feedback-warning-500",
   error: "text-feedback-error-500",
-  default: "text-brand-primary-500",
+  primary: "text-brand-primary-500",
 };
 
 export interface AlertProps
@@ -55,13 +55,14 @@ export interface AlertProps
   actionLabel?: string;
   onAction?: () => void;
   onClose?: () => void;
+  icon?: React.ComponentType<{ size?: number; color?: string }>;
 }
 
 const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
-  ({ className, variant = "default", title, description, actionLabel, onAction, onClose, ...props }, ref) => {
+  ({ className, variant = "primary", title, description, actionLabel, onAction, onClose, icon, ...props }, ref) => {
     const [isVisible, setIsVisible] = React.useState(true);
-    const IconComponent = iconMap[variant || "default"];
-    const iconColor = iconColorMap[variant || "default"];
+    const IconComponent = icon || iconMap[variant || "primary"];
+    const iconColor = iconColorMap[variant || "primary"];
 
     const handleClose = () => {
       setIsVisible(false);
@@ -80,7 +81,7 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
         {...props}
       >
         {/* Icon */}
-        <div className="flex-shrink-0 pt-0.5">
+        <div className="flex-shrink-0">
           <IconComponent size={20} color={iconColor} />
         </div>
 
@@ -89,11 +90,11 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
           <AlertTitle variant={variant}>{title}</AlertTitle>
           {description && <AlertDescription>{description}</AlertDescription>}
           {actionLabel && onAction && (
-            <div className="pt-1">
+            <div className="pt-0.5">
               <Button
                 mode="plain"
                 onClick={onAction}
-                className="p-0 h-auto font-medium underline decoration-2 underline-offset-4 hover:no-underline transition-all"
+                className="p-0 h-auto font-medium text-neutral-500 hover:text-neutral-700 underline decoration-2 underline-offset-4 transition-colors"
               >
                 {actionLabel}
               </Button>
@@ -103,7 +104,8 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
 
         {/* Divider + Close Button */}
         {onClose && (
-          <div className="flex items-start gap-3 ml-3 pl-3 border-l border-neutral-300">
+          <>
+            <div className="self-stretch border-l border-neutral-300 -my-4 mx-3" />
             <button
               onClick={handleClose}
               className="flex-shrink-0 text-neutral-500 hover:text-neutral-700 transition-colors"
@@ -111,7 +113,7 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
             >
               <X size={18} />
             </button>
-          </div>
+          </>
         )}
       </div>
     );
@@ -122,13 +124,13 @@ Alert.displayName = "Alert";
 const AlertTitle = React.forwardRef<
   HTMLParagraphElement,
   React.HTMLAttributes<HTMLHeadingElement> & { variant?: string }
->(({ className, variant = "default", ...props }, ref) => {
+>(({ className, variant = "primary", ...props }, ref) => {
   const titleColor = titleColorMap[variant as keyof typeof titleColorMap];
   
   return (
     <h5
       ref={ref}
-      className={cn("font-semibold leading-tight tracking-tight", titleColor, className)}
+      className={cn("font-medium leading-tight tracking-tight", titleColor, className)}
       {...props}
     />
   );

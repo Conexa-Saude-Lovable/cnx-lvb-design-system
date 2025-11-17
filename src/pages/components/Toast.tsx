@@ -11,23 +11,20 @@ const ToastComponent = () => {
   const showSuccessToast = () => {
     toast({
       variant: "success",
-      title: "Salvo com sucesso!",
-      description: "Suas alterações foram salvas.",
+      description: "Suas alterações foram salvas com sucesso.",
     });
   };
 
   const showInformationToast = () => {
     toast({
       variant: "information",
-      title: "Nova atualização disponível",
-      description: "Atualize para a versão mais recente.",
+      description: "Uma nova atualização está disponível.",
     });
   };
 
   const showWarningToast = () => {
     toast({
       variant: "warning",
-      title: "Atenção necessária",
       description: "Verifique os dados antes de continuar.",
     });
   };
@@ -35,7 +32,6 @@ const ToastComponent = () => {
   const showErrorToast = () => {
     toast({
       variant: "error",
-      title: "Erro ao processar",
       description: "Não foi possível completar a operação.",
     });
   };
@@ -43,7 +39,6 @@ const ToastComponent = () => {
   const showSuccessToastWithAction = () => {
     toast({
       variant: "success",
-      title: "Arquivo enviado",
       description: "Seu arquivo foi enviado com sucesso.",
       action: (
         <ToastAction altText="Ver arquivo">
@@ -56,10 +51,9 @@ const ToastComponent = () => {
   const showInformationToastWithAction = () => {
     toast({
       variant: "information",
-      title: "Atualização disponível",
       description: "Uma nova versão está pronta.",
       action: (
-        <ToastAction altText="Atualizar agora">
+        <ToastAction altText="Atualizar">
           Atualizar agora
         </ToastAction>
       ),
@@ -69,11 +63,10 @@ const ToastComponent = () => {
   const showWarningToastWithAction = () => {
     toast({
       variant: "warning",
-      title: "Ação necessária",
-      description: "Revise as informações antes de prosseguir.",
+      description: "Esta ação não pode ser desfeita.",
       action: (
-        <ToastAction altText="Revisar">
-          Revisar
+        <ToastAction altText="Confirmar">
+          Confirmar
         </ToastAction>
       ),
     });
@@ -82,20 +75,12 @@ const ToastComponent = () => {
   const showErrorToastWithAction = () => {
     toast({
       variant: "error",
-      title: "Falha no envio",
-      description: "Não foi possível enviar o formulário.",
+      description: "Ocorreu um erro ao processar sua solicitação.",
       action: (
         <ToastAction altText="Tentar novamente">
           Tentar novamente
         </ToastAction>
       ),
-    });
-  };
-
-  const showToastTitleOnly = () => {
-    toast({
-      variant: "success",
-      title: "Operação concluída!",
     });
   };
 
@@ -192,24 +177,6 @@ const ToastComponent = () => {
           </Card>
         </section>
 
-        {/* Apenas Título */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-semibold mb-6">Apenas Título</h2>
-          <Card>
-            <CardHeader>
-              <CardTitle>Toast sem descrição</CardTitle>
-              <CardDescription>
-                Notificações curtas com apenas o título
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <Button variant="outline" onClick={showToastTitleOnly}>
-                Mostrar Toast Simples
-              </Button>
-            </CardContent>
-          </Card>
-        </section>
-
         {/* Documentação */}
         <section className="mb-12">
           <h2 className="text-2xl font-semibold mb-6">Como Usar</h2>
@@ -231,29 +198,21 @@ const ToastComponent = () => {
                   <pre className="bg-muted p-4 rounded-lg overflow-x-auto">
                     <code>{`const { toast } = useToast();
 
-// Toast básico
+// Toast simples
 toast({
   variant: "success",
-  title: "Salvo com sucesso!",
-  description: "Suas alterações foram salvas.",
+  description: "Operação concluída com sucesso.",
 });
 
 // Toast com ação
 toast({
   variant: "information",
-  title: "Atualização disponível",
   description: "Uma nova versão está pronta.",
   action: (
     <ToastAction altText="Atualizar">
       Atualizar agora
     </ToastAction>
   ),
-});
-
-// Toast apenas com título
-toast({
-  variant: "success",
-  title: "Operação concluída!",
 });`}</code>
                   </pre>
                 </div>
@@ -288,16 +247,10 @@ toast({
                       <td className="py-2 px-4">Variante visual do toast</td>
                     </tr>
                     <tr className="border-b">
-                      <td className="py-2 px-4 font-mono">title</td>
-                      <td className="py-2 px-4 font-mono text-xs">string | ReactNode</td>
-                      <td className="py-2 px-4">-</td>
-                      <td className="py-2 px-4">Título do toast</td>
-                    </tr>
-                    <tr className="border-b">
                       <td className="py-2 px-4 font-mono">description</td>
                       <td className="py-2 px-4 font-mono text-xs">string | ReactNode</td>
                       <td className="py-2 px-4">-</td>
-                      <td className="py-2 px-4">Descrição/mensagem do toast</td>
+                      <td className="py-2 px-4">Mensagem principal do toast (text-neutral-500)</td>
                     </tr>
                     <tr className="border-b">
                       <td className="py-2 px-4 font-mono">action</td>

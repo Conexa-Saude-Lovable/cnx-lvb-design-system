@@ -4,7 +4,6 @@ import {
   ToastClose, 
   ToastDescription, 
   ToastProvider, 
-  ToastTitle, 
   ToastViewport,
   iconMap,
   iconColorMap,
@@ -17,7 +16,7 @@ export function Toaster() {
 
   return (
     <ToastProvider>
-      {toasts.map(function ({ id, title, description, action, variant = "primary", ...props }) {
+      {toasts.map(function ({ id, description, action, variant = "primary", ...props }) {
         const IconComponent = iconMap[variant];
         const iconColor = iconColorMap[variant];
         const borderColor = borderColorMap[variant];
@@ -30,9 +29,7 @@ export function Toaster() {
             </div>
 
             {/* Content */}
-            <div className="flex-1 space-y-1">
-              {title && <ToastTitle variant={variant}>{title}</ToastTitle>}
-              
+            <div className="flex-1">
               {/* Description + Action (responsive layout) */}
               <div className="flex flex-col md:flex-row md:items-center md:gap-2">
                 {description && (

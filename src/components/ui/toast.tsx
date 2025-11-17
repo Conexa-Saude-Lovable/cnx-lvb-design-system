@@ -1,8 +1,7 @@
 import * as React from "react";
 import * as ToastPrimitives from "@radix-ui/react-toast";
 import { cva, type VariantProps } from "class-variance-authority";
-import { X, CheckCircle2, AlertCircle, AlertTriangle, Info } from "lucide-react";
-import { Check, Bulb, Ring, DoubleCheck } from "../icons";
+import { X, CircleCheck, Info, CircleAlert, TriangleAlert } from "lucide-react";
 import { cn } from "../../lib/utils";
 
 const ToastProvider = ToastPrimitives.Provider;
@@ -23,19 +22,19 @@ const ToastViewport = React.forwardRef<
 ToastViewport.displayName = ToastPrimitives.Viewport.displayName;
 
 const iconMap = {
-  success: Check,
-  information: Bulb,
-  warning: Ring,
-  error: DoubleCheck,
-  primary: Check,
+  success: CircleCheck,
+  information: Info,
+  warning: CircleAlert,
+  error: TriangleAlert,
+  primary: CircleCheck,
 };
 
 const iconColorMap = {
-  success: "#10B981",
-  information: "#3B82F6",
-  warning: "#F59E0B",
-  error: "#EF4444",
-  primary: "#8B5CF6",
+  success: "hsl(var(--feedback-success-400))",
+  information: "hsl(var(--feedback-info-400))",
+  warning: "hsl(var(--feedback-warning-400))",
+  error: "hsl(var(--feedback-error-400))",
+  primary: "hsl(var(--brand-primary-400))",
 };
 
 const borderColorMap = {

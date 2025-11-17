@@ -133,7 +133,7 @@ const Chip = React.forwardRef<HTMLButtonElement, ChipProps>(
       
       if (React.isValidElement(icon)) {
         return React.cloneElement(icon as React.ReactElement<any>, {
-          size: size === "small" ? 16 : 20,
+          size: 16,
           className: cn(
             (icon as React.ReactElement<any>).props?.className,
             "transition-colors",

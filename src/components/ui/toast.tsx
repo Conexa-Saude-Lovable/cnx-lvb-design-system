@@ -38,14 +38,6 @@ const iconColorMap = {
   primary: "#8B5CF6",
 };
 
-const titleColorMap = {
-  success: "text-feedback-success-700",
-  information: "text-feedback-info-700",
-  warning: "text-feedback-warning-700",
-  error: "text-feedback-error-700",
-  primary: "text-brand-primary-700",
-};
-
 const borderColorMap = {
   success: "border-feedback-success-300",
   information: "border-feedback-info-300",
@@ -124,27 +116,13 @@ const ToastClose = React.forwardRef<
 ));
 ToastClose.displayName = ToastPrimitives.Close.displayName;
 
-const ToastTitle = React.forwardRef<
-  React.ElementRef<typeof ToastPrimitives.Title>,
-  React.ComponentPropsWithoutRef<typeof ToastPrimitives.Title> & {
-    variant?: "success" | "information" | "warning" | "error" | "primary";
-  }
->(({ className, variant = "primary", ...props }, ref) => (
-  <ToastPrimitives.Title 
-    ref={ref} 
-    className={cn("text-sm font-semibold", titleColorMap[variant], className)} 
-    {...props} 
-  />
-));
-ToastTitle.displayName = ToastPrimitives.Title.displayName;
-
 const ToastDescription = React.forwardRef<
   React.ElementRef<typeof ToastPrimitives.Description>,
   React.ComponentPropsWithoutRef<typeof ToastPrimitives.Description>
 >(({ className, ...props }, ref) => (
   <ToastPrimitives.Description 
     ref={ref} 
-    className={cn("text-sm text-neutral-600", className)} 
+    className={cn("text-sm text-neutral-500", className)} 
     {...props} 
   />
 ));
@@ -160,7 +138,6 @@ export {
   ToastProvider,
   ToastViewport,
   Toast,
-  ToastTitle,
   ToastDescription,
   ToastClose,
   ToastAction,

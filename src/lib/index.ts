@@ -44,7 +44,7 @@ export { Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupActio
 export { Skeleton } from "../components/ui/skeleton";
 export { Table, TableBody, TableCaption, TableCell, TableFooter, TableHead, TableHeader, TableRow } from "../components/ui/table";
 export { Textarea } from "../components/ui/textarea";
-export { Toast, ToastAction, ToastClose, ToastDescription, ToastProvider, ToastTitle, ToastViewport } from "../components/ui/toast";
+export { Toast, ToastAction, ToastClose, ToastDescription, ToastProvider, ToastViewport } from "../components/ui/toast";
 export { Toaster } from "../components/ui/toaster";
 export { ToggleGroup, ToggleGroupItem } from "../components/ui/toggle-group";
 export { Toggle } from "../components/ui/toggle";

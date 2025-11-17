@@ -664,7 +664,7 @@ const Showcase = () => {
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                  <Link to="/components/button" className="group rounded-lg border p-4 hover:bg-accent transition-colors">
+                  <Link to="/components/button" className="group rounded-lg border p-4 hover:bg-[hsl(var(--brand-primary-200))] transition-colors">
                     <div className="flex items-center gap-3">
                       <Sparkles className="h-5 w-5 text-primary" />
                       <div>
@@ -673,7 +673,7 @@ const Showcase = () => {
                       </div>
                     </div>
                   </Link>
-                  <Link to="/components/alert" className="group rounded-lg border p-4 hover:bg-accent transition-colors">
+                  <Link to="/components/alert" className="group rounded-lg border p-4 hover:bg-[hsl(var(--brand-primary-200))] transition-colors">
                     <div className="flex items-center gap-3">
                       <Sparkles className="h-5 w-5 text-primary" />
                       <div>
@@ -682,7 +682,7 @@ const Showcase = () => {
                       </div>
                     </div>
                   </Link>
-                  <Link to="/components/toast" className="group rounded-lg border p-4 hover:bg-accent transition-colors">
+                  <Link to="/components/toast" className="group rounded-lg border p-4 hover:bg-[hsl(var(--brand-primary-200))] transition-colors">
                     <div className="flex items-center gap-3">
                       <Sparkles className="h-5 w-5 text-primary" />
                       <div>
@@ -691,7 +691,7 @@ const Showcase = () => {
                       </div>
                     </div>
                 </Link>
-                <Link to="/components/chip" className="group rounded-lg border p-4 hover:bg-accent transition-colors">
+                <Link to="/components/chip" className="group rounded-lg border p-4 hover:bg-[hsl(var(--brand-primary-200))] transition-colors">
                   <div className="flex items-center gap-3">
                     <Sparkles className="h-5 w-5 text-primary" />
                     <div>

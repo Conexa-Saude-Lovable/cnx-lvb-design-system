@@ -3,7 +3,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const chipVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-all cursor-pointer border-2 disabled:cursor-not-allowed",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-all cursor-pointer border disabled:cursor-not-allowed",
   {
     variants: {
       variant: {
@@ -39,7 +39,7 @@ const chipVariants = cva(
         checked: false,
         disabled: false,
         className:
-          "bg-[hsl(var(--brand-primary-100))] text-[hsl(var(--neutral-400))] border-transparent hover:border-[hsl(var(--brand-primary-300))] hover:text-[hsl(var(--brand-primary-300))]",
+          "bg-[hsl(var(--brand-primary-100))] text-[hsl(var(--neutral-500))] border-transparent hover:border-[hsl(var(--brand-primary-300))] hover:text-[hsl(var(--brand-primary-300))]",
       },
       // PRIMARY VARIANT - CHECKED STATE
       {
@@ -54,7 +54,7 @@ const chipVariants = cva(
         variant: "primary",
         disabled: true,
         className:
-          "bg-[hsl(var(--neutral-200))] text-[hsl(var(--neutral-300))] border-transparent",
+          "bg-[hsl(var(--neutral-100))] text-[hsl(var(--neutral-300))] border-transparent",
       },
       // NEUTRAL VARIANT - DEFAULT STATE
       {
@@ -62,7 +62,7 @@ const chipVariants = cva(
         checked: false,
         disabled: false,
         className:
-          "bg-[hsl(var(--background-white))] text-[hsl(var(--neutral-400))] border-[hsl(var(--neutral-200))] hover:border-[hsl(var(--brand-primary-300))] hover:text-[hsl(var(--brand-primary-300))]",
+          "bg-[hsl(var(--background-white))] text-[hsl(var(--neutral-500))] border-[hsl(var(--neutral-200))] hover:border-[hsl(var(--brand-primary-300))] hover:text-[hsl(var(--brand-primary-300))]",
       },
       // NEUTRAL VARIANT - CHECKED STATE
       {
@@ -77,7 +77,7 @@ const chipVariants = cva(
         variant: "neutral",
         disabled: true,
         className:
-          "bg-[hsl(var(--neutral-200))] text-[hsl(var(--neutral-300))] border-transparent",
+          "bg-[hsl(var(--neutral-100))] text-[hsl(var(--neutral-300))] border-transparent",
       },
     ],
     defaultVariants: {

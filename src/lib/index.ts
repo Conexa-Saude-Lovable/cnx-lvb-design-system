@@ -10,6 +10,8 @@ export { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs"
 export { Badge } from "../components/ui/badge";
 export { Avatar, AvatarFallback, AvatarImage } from "../components/ui/avatar";
 export { Checkbox } from "../components/ui/checkbox";
+export { Chip, chipVariants } from "../components/ui/chip";
+export type { ChipProps } from "../components/ui/chip";
 export { Switch } from "../components/ui/switch";
 export { Slider } from "../components/ui/slider";
 export { Select, SelectContent, SelectItem, SelectTrigger, SelectValue, SelectGroup, SelectLabel, SelectSeparator, SelectScrollUpButton, SelectScrollDownButton } from "../components/ui/select";

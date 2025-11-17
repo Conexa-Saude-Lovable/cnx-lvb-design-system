@@ -94,10 +94,13 @@ const ToastComponent = () => {
   return (
     <div className="min-h-screen bg-background">
       <div className="container mx-auto py-12 px-4 max-w-5xl">
-        {/* Back Button */}
-        <Link to="/showcase" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-6 transition-colors">
-          <ArrowLeft size={16} />
-          Voltar ao Showcase
+        {/* Breadcrumb/Back */}
+        <Link 
+          to="/showcase?tab=components"
+          className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+        >
+          <ArrowLeft className="h-4 w-4" />
+          Voltar para Componentes
         </Link>
 
         {/* Header */}

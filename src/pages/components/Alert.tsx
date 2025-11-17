@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Alert } from "@/components/ui/alert";
+import { ArrowLeft } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const AlertComponent = () => {
   const [alerts, setAlerts] = useState({
@@ -31,6 +33,15 @@ const AlertComponent = () => {
   return (
     <div className="min-h-screen bg-background">
       <div className="container mx-auto py-12 px-4 max-w-5xl">
+        {/* Breadcrumb/Back */}
+        <Link 
+          to="/showcase?tab=components"
+          className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+        >
+          <ArrowLeft className="h-4 w-4" />
+          Voltar para Componentes
+        </Link>
+
         <div className="mb-12">
           <h1 className="text-4xl font-bold text-foreground mb-4">
             Alert Component

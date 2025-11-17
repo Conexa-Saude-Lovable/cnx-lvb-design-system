@@ -1,10 +1,20 @@
 import { useState } from "react";
 import { Chip } from "@/components/ui/chip";
-import { Check, Heart, Star, User } from "lucide-react";
+import { Check, Heart, Star, User, ArrowLeft } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const ChipShowcase = () => {
   return (
     <div className="container mx-auto p-8 space-y-12">
+      {/* Breadcrumb/Back */}
+      <Link 
+        to="/showcase?tab=components"
+        className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+      >
+        <ArrowLeft className="h-4 w-4" />
+        Voltar para Componentes
+      </Link>
+
       <div>
         <h1 className="text-4xl font-bold mb-2">Chip Component</h1>
         <p className="text-neutral-400 text-lg">

@@ -47,6 +47,14 @@ const titleColorMap = {
   primary: "text-brand-primary-500",
 };
 
+const borderColorMap = {
+  success: "border-feedback-success-300",
+  information: "border-feedback-info-300",
+  warning: "border-feedback-warning-300",
+  error: "border-feedback-error-300",
+  primary: "border-brand-primary-300",
+};
+
 export interface AlertProps
   extends React.HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof alertVariants> {
@@ -63,6 +71,7 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
     const [isVisible, setIsVisible] = React.useState(true);
     const IconComponent = icon || iconMap[variant || "primary"];
     const iconColor = iconColorMap[variant || "primary"];
+    const borderColor = borderColorMap[variant || "primary"];
 
     const handleClose = () => {
       setIsVisible(false);
@@ -90,25 +99,23 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
           <AlertTitle variant={variant}>{title}</AlertTitle>
           {description && <AlertDescription>{description}</AlertDescription>}
           {actionLabel && onAction && (
-            <div className="pt-0.5">
-              <Button
-                mode="plain"
-                onClick={onAction}
-                className="p-0 h-auto font-medium text-neutral-500 hover:text-neutral-700 underline decoration-2 underline-offset-4 transition-colors"
-              >
-                {actionLabel}
-              </Button>
-            </div>
+            <Button
+              mode="plain"
+              onClick={onAction}
+              className="p-0 h-auto font-medium text-neutral-500 hover:text-neutral-700 underline decoration-2 underline-offset-4 transition-colors"
+            >
+              {actionLabel}
+            </Button>
           )}
         </div>
 
         {/* Divider + Close Button */}
         {onClose && (
           <>
-            <div className="self-stretch border-l border-neutral-300 -my-4 mx-3" />
+            <div className={cn("self-stretch border-l -my-4 mx-3", borderColor)} />
             <button
               onClick={handleClose}
-              className="flex-shrink-0 text-neutral-500 hover:text-neutral-700 transition-colors"
+              className="flex-shrink-0 self-center text-neutral-500 hover:text-neutral-700 transition-colors"
               aria-label="Fechar alerta"
             >
               <X size={18} />

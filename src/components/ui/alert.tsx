@@ -112,10 +112,10 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
         {/* Divider + Close Button */}
         {onClose && (
           <>
-            <div className={cn("self-stretch border-l -my-4 ml-3", borderColor)} />
+            <div className={cn("self-stretch border-l -my-4 ml-3 mr-[2px]", borderColor)} />
             <button
               onClick={handleClose}
-              className="flex-shrink-0 self-center text-neutral-300 hover:text-neutral-500 transition-colors"
+              className="flex-shrink-0 self-center ml-[2px] text-neutral-300 hover:text-neutral-500 transition-colors"
               aria-label="Fechar alerta"
             >
               <X size={18} />

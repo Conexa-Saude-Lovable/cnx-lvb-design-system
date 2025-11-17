@@ -93,7 +93,7 @@ const ToastComponent = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="container mx-auto py-12 px-4 max-w-5xl">
+      <main className="container mx-auto px-4 py-8 space-y-8">
         {/* Breadcrumb/Back */}
         <Link 
           to="/showcase?tab=components"
@@ -104,9 +104,9 @@ const ToastComponent = () => {
         </Link>
 
         {/* Header */}
-        <div className="mb-12">
-          <h1 className="text-4xl font-bold mb-4">Toast Component</h1>
-          <p className="text-lg text-muted-foreground mb-6">
+        <div>
+          <h1 className="text-4xl font-bold mb-2">Toast Component</h1>
+          <p className="text-lg text-muted-foreground">
             Notificações flutuantes com múltiplas variantes e ações opcionais.
           </p>
           <Button onClick={showAllToasts} size="lg">
@@ -115,7 +115,7 @@ const ToastComponent = () => {
         </div>
 
         {/* Variantes Básicas */}
-        <section className="mb-12">
+        <section>
           <h2 className="text-2xl font-semibold mb-6">Variantes Básicas</h2>
           <Card>
             <CardHeader>
@@ -148,7 +148,7 @@ const ToastComponent = () => {
         </section>
 
         {/* Com Ação */}
-        <section className="mb-12">
+        <section>
           <h2 className="text-2xl font-semibold mb-6">Com Botão de Ação</h2>
           <Card>
             <CardHeader>
@@ -181,7 +181,7 @@ const ToastComponent = () => {
         </section>
 
         {/* Documentação */}
-        <section className="mb-12">
+        <section>
           <h2 className="text-2xl font-semibold mb-6">Como Usar</h2>
           <Card>
             <CardHeader>
@@ -273,7 +273,7 @@ toast({
             </CardContent>
           </Card>
         </section>
-      </div>
+      </main>
     </div>
   );
 };

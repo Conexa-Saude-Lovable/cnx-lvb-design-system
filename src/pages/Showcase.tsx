@@ -673,6 +673,15 @@ const Showcase = () => {
                       </div>
                     </div>
                   </Link>
+                  <Link to="/components/alert" className="group rounded-lg border p-4 hover:bg-accent transition-colors">
+                    <div className="flex items-center gap-3">
+                      <Sparkles className="h-5 w-5 text-primary" />
+                      <div>
+                        <p className="font-medium">Alert</p>
+                        <p className="text-sm text-muted-foreground">Alertas e notificações com múltiplas variantes</p>
+                      </div>
+                    </div>
+                  </Link>
                 </div>
               </CardContent>
             </Card>

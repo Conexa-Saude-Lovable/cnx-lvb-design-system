@@ -32,7 +32,7 @@ const AlertComponent = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="container mx-auto py-12 px-4 max-w-5xl">
+      <main className="container mx-auto px-4 py-8 space-y-8">
         {/* Breadcrumb/Back */}
         <Link 
           to="/showcase?tab=components"
@@ -42,11 +42,11 @@ const AlertComponent = () => {
           Voltar para Componentes
         </Link>
 
-        <div className="mb-12">
-          <h1 className="text-4xl font-bold text-foreground mb-4">
+        <div>
+          <h1 className="text-4xl font-bold text-foreground mb-2">
             Alert Component
           </h1>
-          <p className="text-lg text-muted-foreground mb-6">
+          <p className="text-lg text-muted-foreground">
             Componente de alertas e notificações com múltiplas variantes e funcionalidades.
           </p>
           <button
@@ -58,7 +58,7 @@ const AlertComponent = () => {
         </div>
 
         {/* Variantes de Cor */}
-        <section className="mb-12">
+        <section>
           <h2 className="text-2xl font-semibold text-foreground mb-6">
             Variantes de Cor
           </h2>
@@ -111,7 +111,7 @@ const AlertComponent = () => {
         </section>
 
         {/* Com Botão de Ação */}
-        <section className="mb-12">
+        <section>
           <h2 className="text-2xl font-semibold text-foreground mb-6">
             Com Botão de Ação
           </h2>
@@ -130,7 +130,7 @@ const AlertComponent = () => {
         </section>
 
         {/* Alertas Simples (sem descrição) */}
-        <section className="mb-12">
+        <section>
           <h2 className="text-2xl font-semibold text-foreground mb-6">
             Alertas Simples
           </h2>
@@ -146,7 +146,7 @@ const AlertComponent = () => {
         </section>
 
         {/* Sem Botão de Fechar */}
-        <section className="mb-12">
+        <section>
           <h2 className="text-2xl font-semibold text-foreground mb-6">
             Sem Botão de Fechar
           </h2>
@@ -160,7 +160,7 @@ const AlertComponent = () => {
         </section>
 
         {/* Todos os Exemplos Juntos */}
-        <section className="mb-12">
+        <section>
           <h2 className="text-2xl font-semibold text-foreground mb-6">
             Exemplo de Uso no Código
           </h2>
@@ -253,7 +253,7 @@ const AlertComponent = () => {
             </table>
           </div>
         </section>
-      </div>
+      </main>
     </div>
   );
 };

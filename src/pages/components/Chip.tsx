@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const ChipShowcase = () => {
   return (
-    <div className="container mx-auto p-8 space-y-12">
+    <main className="container mx-auto px-4 py-8 space-y-8">
       {/* Breadcrumb/Back */}
       <Link 
         to="/showcase?tab=components"
@@ -344,7 +344,7 @@ import { Heart, Check, Star } from "lucide-react";
           </table>
         </div>
       </section>
-    </div>
+    </main>
   );
 };
 

@@ -3,7 +3,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const chipVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-all cursor-pointer border disabled:cursor-not-allowed",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-all cursor-pointer border disabled:cursor-not-allowed group",
   {
     variants: {
       variant: {
@@ -127,35 +127,33 @@ const Chip = React.forwardRef<HTMLButtonElement, ChipProps>(
     },
     ref
   ) => {
-    // Determina a cor dos ícones baseado no estado
-    const getIconColor = () => {
-      // Estado disabled
-      if (disabled) {
-        return "hsl(var(--neutral-300))";
-      }
-      
-      // Estado checked - usar currentColor para herdar a cor do texto
-      if (checked) {
-        return "currentColor"; // pure.white (primary) ou primary.300 (neutral)
-      }
-      
-      // Estado default - ícones mais claros que o texto
-      return "hsl(var(--neutral-200))";
-    };
-
-    const iconColor = getIconColor();
-
-    // Clone icons com cor apropriada
+    // Clone icons com classes CSS apropriadas para cada estado
     const renderIcon = (icon: React.ReactNode) => {
       if (!icon) return null;
       
       if (React.isValidElement(icon)) {
         return React.cloneElement(icon as React.ReactElement<any>, {
           size: size === "small" ? 16 : 20,
-          color: iconColor,
           className: cn(
             (icon as React.ReactElement<any>).props?.className,
-            "transition-colors"
+            "transition-colors",
+            // Classes condicionais para cores dos ícones
+            {
+              // Estado disabled - ambas variants
+              "text-[hsl(var(--neutral-300))]": disabled,
+              
+              // Primary e Neutral variants - default state (ícone neutral.200, hover primary.300)
+              "text-[hsl(var(--neutral-200))] group-hover:text-[hsl(var(--brand-primary-300))]": 
+                !checked && !disabled,
+              
+              // Primary variant - checked state (ícone pure.white)
+              "text-[hsl(var(--pure-white))]": 
+                variant === "primary" && checked && !disabled,
+              
+              // Neutral variant - checked state (ícone primary.300)
+              "text-[hsl(var(--brand-primary-300))]": 
+                variant === "neutral" && checked && !disabled,
+            }
           ),
         });
       }

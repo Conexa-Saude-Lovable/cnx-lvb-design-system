@@ -10,11 +10,11 @@ const alertVariants = cva(
   {
     variants: {
       variant: {
-        success: "bg-feedback-success-100 border-feedback-success-300 text-feedback-success-400",
-        information: "bg-feedback-info-100 border-feedback-info-300 text-feedback-info-400",
-        warning: "bg-feedback-warning-100 border-feedback-warning-300 text-feedback-warning-400",
-        error: "bg-feedback-error-100 border-feedback-error-300 text-feedback-error-400",
-        default: "bg-neutral-200 border-neutral-300 text-neutral-700",
+        success: "bg-feedback-success-100 border-feedback-success-300",
+        information: "bg-feedback-info-100 border-feedback-info-300",
+        warning: "bg-feedback-warning-100 border-feedback-warning-300",
+        error: "bg-feedback-error-100 border-feedback-error-300",
+        default: "bg-brand-primary-100 border-brand-primary-300",
       },
     },
     defaultVariants: {
@@ -32,11 +32,19 @@ const iconMap = {
 };
 
 const iconColorMap = {
-  success: "hsl(var(--feedback-success-300))",
-  information: "hsl(var(--feedback-info-300))",
-  warning: "hsl(var(--feedback-warning-300))",
-  error: "hsl(var(--feedback-error-300))",
-  default: "hsl(var(--neutral-400))",
+  success: "hsl(var(--feedback-success-400))",
+  information: "hsl(var(--feedback-info-400))",
+  warning: "hsl(var(--feedback-warning-400))",
+  error: "hsl(var(--feedback-error-400))",
+  default: "hsl(var(--brand-primary-400))",
+};
+
+const titleColorMap = {
+  success: "text-feedback-success-500",
+  information: "text-feedback-info-500",
+  warning: "text-feedback-warning-500",
+  error: "text-feedback-error-500",
+  default: "text-brand-primary-500",
 };
 
 export interface AlertProps
@@ -78,7 +86,7 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
 
         {/* Content */}
         <div className="flex-1 space-y-2">
-          <AlertTitle>{title}</AlertTitle>
+          <AlertTitle variant={variant}>{title}</AlertTitle>
           {description && <AlertDescription>{description}</AlertDescription>}
           {actionLabel && onAction && (
             <div className="pt-1">
@@ -93,15 +101,17 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
           )}
         </div>
 
-        {/* Close Button */}
+        {/* Divider + Close Button */}
         {onClose && (
-          <button
-            onClick={handleClose}
-            className="flex-shrink-0 text-current opacity-70 hover:opacity-100 hover:scale-110 transition-all"
-            aria-label="Fechar alerta"
-          >
-            <X size={18} />
-          </button>
+          <div className="flex items-start gap-3 ml-3 pl-3 border-l border-neutral-300">
+            <button
+              onClick={handleClose}
+              className="flex-shrink-0 text-neutral-500 hover:text-neutral-700 transition-colors"
+              aria-label="Fechar alerta"
+            >
+              <X size={18} />
+            </button>
+          </div>
         )}
       </div>
     );
@@ -111,14 +121,18 @@ Alert.displayName = "Alert";
 
 const AlertTitle = React.forwardRef<
   HTMLParagraphElement,
-  React.HTMLAttributes<HTMLHeadingElement>
->(({ className, ...props }, ref) => (
-  <h5
-    ref={ref}
-    className={cn("font-semibold leading-tight tracking-tight", className)}
-    {...props}
-  />
-));
+  React.HTMLAttributes<HTMLHeadingElement> & { variant?: string }
+>(({ className, variant = "default", ...props }, ref) => {
+  const titleColor = titleColorMap[variant as keyof typeof titleColorMap];
+  
+  return (
+    <h5
+      ref={ref}
+      className={cn("font-semibold leading-tight tracking-tight", titleColor, className)}
+      {...props}
+    />
+  );
+});
 AlertTitle.displayName = "AlertTitle";
 
 const AlertDescription = React.forwardRef<
@@ -127,7 +141,7 @@ const AlertDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn("text-sm leading-relaxed opacity-90", className)}
+    className={cn("text-sm leading-relaxed text-neutral-500", className)}
     {...props}
   />
 ));

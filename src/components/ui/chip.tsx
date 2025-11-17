@@ -129,16 +129,7 @@ const Chip = React.forwardRef<HTMLButtonElement, ChipProps>(
   ) => {
     // Determina a cor dos ícones baseado no estado
     const getIconColor = () => {
-      if (disabled) {
-        return "hsl(var(--neutral-300))";
-      }
-      if (checked) {
-        if (variant === "primary") {
-          return "hsl(var(--pure-white))";
-        }
-        return "hsl(var(--brand-primary-300))";
-      }
-      // Estado default - usar currentColor para herdar do texto
+      // Sempre usar currentColor para herdar a cor do texto do chip
       return "currentColor";
     };
 

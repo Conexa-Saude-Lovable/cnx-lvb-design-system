@@ -3,7 +3,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "./button";
-import { Check, Bulb, Ring, DoubleCheck } from "@/components/icons";
+import { CircleCheck, Info, CircleAlert, TriangleAlert } from "lucide-react";
 
 const alertVariants = cva(
   "relative w-full rounded-lg border p-4 flex items-start gap-3 animate-fade-in",
@@ -24,11 +24,11 @@ const alertVariants = cva(
 );
 
 const iconMap = {
-  success: Check,
-  information: Bulb,
-  warning: Ring,
-  error: DoubleCheck,
-  primary: Bulb,
+  success: CircleCheck,
+  information: Info,
+  warning: CircleAlert,
+  error: TriangleAlert,
+  primary: Info,
 };
 
 const iconColorMap = {

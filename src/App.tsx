@@ -9,6 +9,7 @@ import Showcase from "./pages/Showcase";
 import Icons from "./pages/Icons";
 import ButtonComponent from "./pages/components/Button";
 import AlertComponent from "./pages/components/Alert";
+import ToastComponent from "./pages/components/Toast";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/icons" element={<Icons />} />
           <Route path="/components/button" element={<ButtonComponent />} />
           <Route path="/components/alert" element={<AlertComponent />} />
+          <Route path="/components/toast" element={<ToastComponent />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

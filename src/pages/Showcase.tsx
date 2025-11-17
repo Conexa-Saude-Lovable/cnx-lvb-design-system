@@ -682,6 +682,15 @@ const Showcase = () => {
                       </div>
                     </div>
                   </Link>
+                  <Link to="/components/toast" className="group rounded-lg border p-4 hover:bg-accent transition-colors">
+                    <div className="flex items-center gap-3">
+                      <Sparkles className="h-5 w-5 text-primary" />
+                      <div>
+                        <p className="font-medium">Toast</p>
+                        <p className="text-sm text-muted-foreground">Notificações flutuantes com variantes e ações</p>
+                      </div>
+                    </div>
+                  </Link>
                 </div>
               </CardContent>
             </Card>

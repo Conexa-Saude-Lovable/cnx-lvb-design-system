@@ -24,11 +24,11 @@ const alertVariants = cva(
 );
 
 const iconMap = {
-  success: CircleCheck,
-  information: Info,
-  warning: CircleAlert,
-  error: TriangleAlert,
-  primary: Info,
+  success: CircleCheck as any,
+  information: Info as any,
+  warning: CircleAlert as any,
+  error: TriangleAlert as any,
+  primary: Info as any,
 };
 
 const iconColorMap = {

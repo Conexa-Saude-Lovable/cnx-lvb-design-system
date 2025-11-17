@@ -1,7 +1,8 @@
 import * as React from "react";
 import * as ToastPrimitives from "@radix-ui/react-toast";
 import { cva, type VariantProps } from "class-variance-authority";
-import { X, CircleCheck, Info, CircleAlert, TriangleAlert } from "lucide-react";
+import { X } from "lucide-react";
+import { CircleCheck, Info, CircleAlert, TriangleAlert } from "lucide-react";
 import { cn } from "../../lib/utils";
 
 const ToastProvider = ToastPrimitives.Provider;
@@ -22,11 +23,11 @@ const ToastViewport = React.forwardRef<
 ToastViewport.displayName = ToastPrimitives.Viewport.displayName;
 
 const iconMap = {
-  success: CircleCheck,
-  information: Info,
-  warning: CircleAlert,
-  error: TriangleAlert,
-  primary: CircleCheck,
+  success: CircleCheck as any,
+  information: Info as any,
+  warning: CircleAlert as any,
+  error: TriangleAlert as any,
+  primary: CircleCheck as any,
 };
 
 const iconColorMap = {

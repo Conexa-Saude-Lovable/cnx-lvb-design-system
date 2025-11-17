@@ -700,6 +700,15 @@ const Showcase = () => {
                     </div>
                   </div>
                 </Link>
+                <Link to="/components/switch" className="group rounded-lg border p-4 hover:bg-[hsl(var(--brand-primary-200))] transition-colors">
+                  <div className="flex items-center gap-3">
+                    <Sparkles className="h-5 w-5 text-primary" />
+                    <div>
+                      <p className="font-medium">Switch</p>
+                      <p className="text-sm text-muted-foreground">Alternância para ativar/desativar configurações</p>
+                    </div>
+                  </div>
+                </Link>
               </div>
               </CardContent>
             </Card>

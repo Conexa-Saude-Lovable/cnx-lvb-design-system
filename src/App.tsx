@@ -11,6 +11,7 @@ import ButtonComponent from "./pages/components/Button";
 import AlertComponent from "./pages/components/Alert";
 import ToastComponent from "./pages/components/Toast";
 import ChipShowcase from "./pages/components/Chip";
+import SwitchComponent from "./pages/components/Switch";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -30,6 +31,7 @@ const App = () => (
           <Route path="/components/alert" element={<AlertComponent />} />
           <Route path="/components/toast" element={<ToastComponent />} />
           <Route path="/components/chip" element={<ChipShowcase />} />
+          <Route path="/components/switch" element={<SwitchComponent />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

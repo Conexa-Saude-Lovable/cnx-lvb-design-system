@@ -15,19 +15,27 @@ const ChipShowcase = () => {
       {/* Variants */}
       <section className="space-y-4">
         <h2 className="text-2xl font-semibold">Variants</h2>
-        
+
         <div className="space-y-4">
           <div>
-            <h3 className="text-lg font-medium mb-3">Neutral (Recomendado)</h3>
+            <h3 className="text-lg font-medium mb-3">Neutral</h3>
             <p className="text-neutral-400 text-sm mb-3">
               Variant mais versátil e recomendada para a maioria dos casos de uso.
             </p>
             <div className="flex flex-wrap gap-3">
               <Chip variant="neutral">Default</Chip>
-              <Chip variant="neutral" checked>Checked</Chip>
-              <Chip variant="neutral" disabled>Disabled</Chip>
-              <Chip variant="neutral" leftIcon={<Star />}>Com Ícone</Chip>
-              <Chip variant="neutral" leftIcon={<Heart />} checked>Favorito</Chip>
+              <Chip variant="neutral" checked>
+                Checked
+              </Chip>
+              <Chip variant="neutral" disabled>
+                Disabled
+              </Chip>
+              <Chip variant="neutral" leftIcon={<Star />}>
+                Com Ícone
+              </Chip>
+              <Chip variant="neutral" leftIcon={<Heart />} checked>
+                Favorito
+              </Chip>
             </div>
           </div>
 
@@ -38,9 +46,15 @@ const ChipShowcase = () => {
             </p>
             <div className="flex flex-wrap gap-3">
               <Chip variant="primary">Default</Chip>
-              <Chip variant="primary" checked>Checked</Chip>
-              <Chip variant="primary" disabled>Disabled</Chip>
-              <Chip variant="primary" leftIcon={<Check />}>Verificado</Chip>
+              <Chip variant="primary" checked>
+                Checked
+              </Chip>
+              <Chip variant="primary" disabled>
+                Disabled
+              </Chip>
+              <Chip variant="primary" leftIcon={<Check />}>
+                Verificado
+              </Chip>
             </div>
           </div>
         </div>
@@ -68,32 +82,50 @@ const ChipShowcase = () => {
       {/* With Icons */}
       <section className="space-y-4">
         <h2 className="text-2xl font-semibold">With Icons</h2>
-        
+
         <div className="space-y-4">
           <div>
             <h3 className="text-lg font-medium mb-3">Left Icon - Neutral</h3>
             <div className="flex flex-wrap gap-3">
-              <Chip variant="neutral" leftIcon={<Heart />}>Favorite</Chip>
-              <Chip variant="neutral" leftIcon={<Star />} checked>Starred</Chip>
-              <Chip variant="neutral" leftIcon={<User />} disabled>User</Chip>
+              <Chip variant="neutral" leftIcon={<Heart />}>
+                Favorite
+              </Chip>
+              <Chip variant="neutral" leftIcon={<Star />} checked>
+                Starred
+              </Chip>
+              <Chip variant="neutral" leftIcon={<User />} disabled>
+                User
+              </Chip>
             </div>
           </div>
 
           <div>
             <h3 className="text-lg font-medium mb-3">Left Icon - Primary</h3>
             <div className="flex flex-wrap gap-3">
-              <Chip variant="primary" leftIcon={<Heart />}>Favorite</Chip>
-              <Chip variant="primary" leftIcon={<Star />} checked>Starred</Chip>
-              <Chip variant="primary" leftIcon={<User />} disabled>User</Chip>
+              <Chip variant="primary" leftIcon={<Heart />}>
+                Favorite
+              </Chip>
+              <Chip variant="primary" leftIcon={<Star />} checked>
+                Starred
+              </Chip>
+              <Chip variant="primary" leftIcon={<User />} disabled>
+                User
+              </Chip>
             </div>
           </div>
 
           <div>
             <h3 className="text-lg font-medium mb-3">Right Icon - Neutral</h3>
             <div className="flex flex-wrap gap-3">
-              <Chip variant="neutral" rightIcon={<Check />}>Verified</Chip>
-              <Chip variant="neutral" rightIcon={<Check />} checked>Completed</Chip>
-              <Chip variant="neutral" rightIcon={<Check />} disabled>Done</Chip>
+              <Chip variant="neutral" rightIcon={<Check />}>
+                Verified
+              </Chip>
+              <Chip variant="neutral" rightIcon={<Check />} checked>
+                Completed
+              </Chip>
+              <Chip variant="neutral" rightIcon={<Check />} disabled>
+                Done
+              </Chip>
             </div>
           </div>
 
@@ -131,38 +163,60 @@ const ChipShowcase = () => {
       {/* Casos de Uso Comuns */}
       <section className="space-y-4">
         <h2 className="text-2xl font-semibold">Casos de Uso Comuns (Variant Neutral)</h2>
-        <p className="text-neutral-400">
-          Exemplos práticos de uso do chip com variant neutral
-        </p>
-        
+        <p className="text-neutral-400">Exemplos práticos de uso do chip com variant neutral</p>
+
         <div className="space-y-4">
           <div>
             <h3 className="text-lg font-medium mb-3">Filtros</h3>
             <div className="flex flex-wrap gap-3">
-              <Chip variant="neutral" size="small">Todos</Chip>
-              <Chip variant="neutral" size="small" checked>Ativos</Chip>
-              <Chip variant="neutral" size="small">Inativos</Chip>
-              <Chip variant="neutral" size="small">Pendentes</Chip>
+              <Chip variant="neutral" size="small">
+                Todos
+              </Chip>
+              <Chip variant="neutral" size="small" checked>
+                Ativos
+              </Chip>
+              <Chip variant="neutral" size="small">
+                Inativos
+              </Chip>
+              <Chip variant="neutral" size="small">
+                Pendentes
+              </Chip>
             </div>
           </div>
 
           <div>
             <h3 className="text-lg font-medium mb-3">Tags/Categorias</h3>
             <div className="flex flex-wrap gap-3">
-              <Chip variant="neutral" leftIcon={<Star />}>JavaScript</Chip>
-              <Chip variant="neutral" leftIcon={<Star />}>React</Chip>
-              <Chip variant="neutral" leftIcon={<Star />} checked>TypeScript</Chip>
-              <Chip variant="neutral" leftIcon={<Star />}>CSS</Chip>
+              <Chip variant="neutral" leftIcon={<Star />}>
+                JavaScript
+              </Chip>
+              <Chip variant="neutral" leftIcon={<Star />}>
+                React
+              </Chip>
+              <Chip variant="neutral" leftIcon={<Star />} checked>
+                TypeScript
+              </Chip>
+              <Chip variant="neutral" leftIcon={<Star />}>
+                CSS
+              </Chip>
             </div>
           </div>
 
           <div>
             <h3 className="text-lg font-medium mb-3">Seleção Múltipla</h3>
             <div className="flex flex-wrap gap-3">
-              <Chip variant="neutral" leftIcon={<User />} checked>Frontend</Chip>
-              <Chip variant="neutral" leftIcon={<User />}>Backend</Chip>
-              <Chip variant="neutral" leftIcon={<User />} checked>DevOps</Chip>
-              <Chip variant="neutral" leftIcon={<User />}>Design</Chip>
+              <Chip variant="neutral" leftIcon={<User />} checked>
+                Frontend
+              </Chip>
+              <Chip variant="neutral" leftIcon={<User />}>
+                Backend
+              </Chip>
+              <Chip variant="neutral" leftIcon={<User />} checked>
+                DevOps
+              </Chip>
+              <Chip variant="neutral" leftIcon={<User />}>
+                Design
+              </Chip>
             </div>
           </div>
         </div>
@@ -171,9 +225,7 @@ const ChipShowcase = () => {
       {/* Interactive Example */}
       <section className="space-y-4">
         <h2 className="text-2xl font-semibold">Interactive Example</h2>
-        <p className="text-neutral-400">
-          Clique nos chips para alternar o estado checked
-        </p>
+        <p className="text-neutral-400">Clique nos chips para alternar o estado checked</p>
         <ChipInteractiveDemo />
       </section>
 
@@ -232,7 +284,9 @@ import { Heart, Check, Star } from "lucide-react";
                 <td className="p-3 font-mono text-sm">variant</td>
                 <td className="p-3 font-mono text-sm">"primary" | "neutral"</td>
                 <td className="p-3 font-mono text-sm">"primary"</td>
-                <td className="p-3">Variante de cor do chip. Neutral é mais versátil e recomendada para a maioria dos casos.</td>
+                <td className="p-3">
+                  Variante de cor do chip. Neutral é mais versátil e recomendada para a maioria dos casos.
+                </td>
               </tr>
               <tr className="border-b">
                 <td className="p-3 font-mono text-sm">size</td>
@@ -286,9 +340,7 @@ import { Heart, Check, Star } from "lucide-react";
 
 // Componente de demonstração interativa
 const ChipInteractiveDemo = () => {
-  const [selectedChips, setSelectedChips] = useState<Set<string>>(
-    new Set()
-  );
+  const [selectedChips, setSelectedChips] = useState<Set<string>>(new Set());
 
   const toggleChip = (id: string) => {
     setSelectedChips((prev) => {

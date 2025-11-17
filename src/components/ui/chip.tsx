@@ -15,7 +15,7 @@ const chipVariants = cva(
         medium: "h-10 px-4 text-sm",
       },
       shape: {
-        default: "rounded-lg",
+        default: "rounded-[99999px]",
         square: "rounded-lg",
         circle: "rounded-full",
       },
@@ -33,6 +33,18 @@ const chipVariants = cva(
       },
     },
     compoundVariants: [
+      // SHAPE CIRCLE - SMALL SIZE
+      {
+        shape: "circle",
+        size: "small",
+        className: "w-6 h-6 p-0 aspect-square",
+      },
+      // SHAPE CIRCLE - MEDIUM SIZE
+      {
+        shape: "circle",
+        size: "medium",
+        className: "w-10 h-10 p-0 aspect-square",
+      },
       // PRIMARY VARIANT - DEFAULT STATE
       {
         variant: "primary",
@@ -126,7 +138,8 @@ const Chip = React.forwardRef<HTMLButtonElement, ChipProps>(
         }
         return "hsl(var(--brand-primary-300))";
       }
-      return "hsl(var(--neutral-200))";
+      // Estado default - usar currentColor para herdar do texto
+      return "currentColor";
     };
 
     const iconColor = getIconColor();

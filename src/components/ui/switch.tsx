@@ -13,6 +13,7 @@ const Switch = React.forwardRef<
       "data-[state=unchecked]:bg-[hsl(var(--neutral-200))]",
       "data-[state=checked]:bg-[hsl(var(--feedback-success-300))]",
       "disabled:opacity-50 disabled:bg-[hsl(var(--neutral-200))]",
+      "data-[state=checked]:disabled:bg-[hsl(var(--neutral-200))]",
       className,
     )}
     {...props}
